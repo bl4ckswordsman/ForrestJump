@@ -45,6 +45,7 @@ C:/Users/amari/OneDrive\ -\ Mittuniversitetet/2022-2023/2022-11/DT079G/Project/F
   C:/Qt/6.4.1/msvc2019_64/include/QtCore/qmargins.h \
   C:/Qt/6.4.1/msvc2019_64/include/QtCore/qmath.h \
   C:/Qt/6.4.1/msvc2019_64/include/QtCore/qmetacontainer.h \
+  C:/Qt/6.4.1/msvc2019_64/include/QtCore/qmetaobject.h \
   C:/Qt/6.4.1/msvc2019_64/include/QtCore/qmetatype.h \
   C:/Qt/6.4.1/msvc2019_64/include/QtCore/qnamespace.h \
   C:/Qt/6.4.1/msvc2019_64/include/QtCore/qnumeric.h \
@@ -87,6 +88,7 @@ C:/Users/amari/OneDrive\ -\ Mittuniversitetet/2022-2023/2022-11/DT079G/Project/F
   C:/Qt/6.4.1/msvc2019_64/include/QtCore/qtimer.h \
   C:/Qt/6.4.1/msvc2019_64/include/QtCore/qtmetamacros.h \
   C:/Qt/6.4.1/msvc2019_64/include/QtCore/qtypeinfo.h \
+  C:/Qt/6.4.1/msvc2019_64/include/QtCore/qurl.h \
   C:/Qt/6.4.1/msvc2019_64/include/QtCore/qutf8stringview.h \
   C:/Qt/6.4.1/msvc2019_64/include/QtCore/qvariant.h \
   C:/Qt/6.4.1/msvc2019_64/include/QtCore/qvariantanimation.h \
@@ -121,8 +123,16 @@ C:/Users/amari/OneDrive\ -\ Mittuniversitetet/2022-2023/2022-11/DT079G/Project/F
   C:/Qt/6.4.1/msvc2019_64/include/QtGui/qtransform.h \
   C:/Qt/6.4.1/msvc2019_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.4.1/msvc2019_64/include/QtGui/qwindowdefs_win.h \
+  C:/Qt/6.4.1/msvc2019_64/include/QtMultimedia/QMediaPlayer \
+  C:/Qt/6.4.1/msvc2019_64/include/QtMultimedia/qaudio.h \
+  C:/Qt/6.4.1/msvc2019_64/include/QtMultimedia/qmediaenumdebug.h \
+  C:/Qt/6.4.1/msvc2019_64/include/QtMultimedia/qmediaplayer.h \
+  C:/Qt/6.4.1/msvc2019_64/include/QtMultimedia/qtmultimedia-config.h \
+  C:/Qt/6.4.1/msvc2019_64/include/QtMultimedia/qtmultimediaexports.h \
+  C:/Qt/6.4.1/msvc2019_64/include/QtMultimedia/qtmultimediaglobal.h \
   C:/Qt/6.4.1/msvc2019_64/include/QtWidgets/QGraphicsRectItem \
   C:/Qt/6.4.1/msvc2019_64/include/QtWidgets/QGraphicsScene \
+  C:/Qt/6.4.1/msvc2019_64/include/QtWidgets/QGraphicsTextItem \
   C:/Qt/6.4.1/msvc2019_64/include/QtWidgets/QGraphicsView \
   C:/Qt/6.4.1/msvc2019_64/include/QtWidgets/QMainWindow \
   C:/Qt/6.4.1/msvc2019_64/include/QtWidgets/QWidget \
@@ -140,5 +150,6 @@ C:/Users/amari/OneDrive\ -\ Mittuniversitetet/2022-2023/2022-11/DT079G/Project/F
   C:/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtwidgetsglobal.h \
   C:/Qt/6.4.1/msvc2019_64/include/QtWidgets/qwidget.h \
   C:/Users/amari/OneDrive\ -\ Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/ForrestJumpV01/Game.h \
+  C:/Users/amari/OneDrive\ -\ Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/ForrestJumpV01/HUD.h \
   C:/Users/amari/OneDrive\ -\ Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/ForrestJumpV01/Obstacle.h \
   C:/Users/amari/OneDrive\ -\ Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/ForrestJumpV01/Player.h

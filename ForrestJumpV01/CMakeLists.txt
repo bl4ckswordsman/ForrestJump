@@ -9,8 +9,10 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(Qt6 COMPONENTS Multimedia REQUIRED)
 
 set(PROJECT_SOURCES
         main.cpp
@@ -20,6 +22,8 @@ set(PROJECT_SOURCES
         Game.h Game.cpp
         Player.h Player.cpp
         Obstacle.h Obstacle.cpp
+        HUD.h HUD.cpp
+        res.qrc
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -46,6 +50,7 @@ else()
 endif()
 
 target_link_libraries(ForrestJumpV01 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(ForrestJumpV01 PUBLIC Qt::Multimedia)
 
 set_target_properties(ForrestJumpV01 PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
