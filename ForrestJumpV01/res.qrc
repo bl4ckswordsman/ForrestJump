@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/audio">
+        <file>resources/theme_OP.mp3</file>
+        <file>resources/gameover.mp3</file>
+        <file>resources/jump_dbz.mp3</file>
+    </qresource>
+    <qresource prefix="/images"/>
+</RCC>
