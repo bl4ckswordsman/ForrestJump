@@ -1,5 +1,8 @@
 #include "Game.h"
 #include <QPropertyAnimation>
+#include <QMediaPlayer>
+#include <QAudioOutput>
+#include <QTimer>
 
 Game::Game(QWidget *parent): QGraphicsView(parent){
     // creating the game scene
@@ -21,6 +24,22 @@ Game::Game(QWidget *parent): QGraphicsView(parent){
 //    Obstacle* obstacle = new Obstacle();
 //    obstacle->setPos(700,500);
 //    scene->addItem(obstacle);
+
+    hud = new HUD();
+    hud->setPos(5,5);
+//    QTimer timer;
+//    connect(&timer, SIGNAL(timeout()), hud, SLOT(scoreIncrement()));
+//    timer.start(1000); // 1000 ms = 1 second
+    scene->addItem(hud);
+
+
+
+    // playing background music
+    QMediaPlayer* music = new QMediaPlayer();
+    QAudioOutput* audioOutput = new QAudioOutput();
+    music->setAudioOutput(audioOutput);
+    music->setSource(QUrl("qrc:/audio/resources/theme_OP.mp3"));
+    music->play();
 
 }
 
