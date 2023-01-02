@@ -2,10 +2,18 @@
 #include <QGraphicsScene>
 #include <QKeyEvent>
 #include <QDebug>
+#include <QAudioOutput>
 
 
 
 Player::Player(QGraphicsItem *parent): QGraphicsRectItem(parent){
+    // setting up the jumping sound effect
+    jumpSFX = new QMediaPlayer();
+    QAudioOutput* audioOutput2 = new QAudioOutput();
+    jumpSFX->setAudioOutput(audioOutput2);
+    audioOutput2->setVolume(0.5);
+    jumpSFX->setSource(QUrl("qrc:/audio/resources/jump_dbz.mp3"));
+
     this->setRect(0,0,xSz,ySz); // changing the rect from 0x0 (default) to 100x100 pixels
     // making the player focusable and setting focus on it
     this->setPos(5,500);
@@ -13,7 +21,7 @@ Player::Player(QGraphicsItem *parent): QGraphicsRectItem(parent){
     this->setFocus();
 
     jumpAnimation = new QPropertyAnimation(this, "y", this);
-    jumpAnimation->setDuration(1000);
+    jumpAnimation->setDuration(300);
     jumpAnimation->setEasingCurve(QEasingCurve::InQuad);
 
 
@@ -25,6 +33,14 @@ void Player::keyPressEvent(QKeyEvent *event){
     if (event->key() == Qt::Key_Up || event->key() == Qt::Key_Space){
         //setPos(x(), y()-10);
         jump();
+
+        // playing jumping sound effect
+        if (jumpSFX->playbackState()  == QMediaPlayer::PlayingState) {
+            jumpSFX->setPosition(0);
+        }
+        else if (jumpSFX->playbackState() == QMediaPlayer::StoppedState) {
+            jumpSFX->play();
+        }
 
 
 

@@ -5,6 +5,7 @@
 #include <QGraphicsRectItem>
 #include <QProperty>
 #include <QPropertyAnimation>
+#include <QMediaPlayer>
 
 
 class Player : public QObject, public QGraphicsRectItem{
@@ -31,6 +32,7 @@ private:
     QPropertyAnimation* jumpAnimation;
     qreal m_y;
     bool isJumping = false;   //prevent double jumping
+    QMediaPlayer* jumpSFX;    //jumping sound effect
 private slots:
     void fallDown();
     void jumpFinished();
