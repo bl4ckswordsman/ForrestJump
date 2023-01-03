@@ -130,7 +130,7 @@ C:/Users/amari/OneDrive\ -\ Mittuniversitetet/2022-2023/2022-11/DT079G/Project/F
   C:/Qt/6.4.1/msvc2019_64/include/QtMultimedia/qtmultimedia-config.h \
   C:/Qt/6.4.1/msvc2019_64/include/QtMultimedia/qtmultimediaexports.h \
   C:/Qt/6.4.1/msvc2019_64/include/QtMultimedia/qtmultimediaglobal.h \
-  C:/Qt/6.4.1/msvc2019_64/include/QtWidgets/QGraphicsRectItem \
+  C:/Qt/6.4.1/msvc2019_64/include/QtWidgets/QGraphicsPixmapItem \
   C:/Qt/6.4.1/msvc2019_64/include/QtWidgets/QGraphicsScene \
   C:/Qt/6.4.1/msvc2019_64/include/QtWidgets/QGraphicsTextItem \
   C:/Qt/6.4.1/msvc2019_64/include/QtWidgets/QGraphicsView \

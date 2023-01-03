@@ -130,7 +130,7 @@ ForrestJumpV01_autogen/timestamp: \
   C:/Qt/6.4.1/msvc2019_64/include/QtMultimedia/qtmultimedia-config.h \
   C:/Qt/6.4.1/msvc2019_64/include/QtMultimedia/qtmultimediaexports.h \
   C:/Qt/6.4.1/msvc2019_64/include/QtMultimedia/qtmultimediaglobal.h \
-  C:/Qt/6.4.1/msvc2019_64/include/QtWidgets/QGraphicsRectItem \
+  C:/Qt/6.4.1/msvc2019_64/include/QtWidgets/QGraphicsPixmapItem \
   C:/Qt/6.4.1/msvc2019_64/include/QtWidgets/QGraphicsScene \
   C:/Qt/6.4.1/msvc2019_64/include/QtWidgets/QGraphicsTextItem \
   C:/Qt/6.4.1/msvc2019_64/include/QtWidgets/QGraphicsView \

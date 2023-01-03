@@ -2,9 +2,10 @@
 #include <QRandomGenerator>
 #include <QDebug>
 
-Obstacle::Obstacle(QGraphicsRectItem* parent):
-    QGraphicsRectItem(parent){
-    setRect(0,0,100,100);
+Obstacle::Obstacle(QGraphicsItem* parent):
+    QGraphicsPixmapItem(parent){
+    //setRect(0,0,100,100);
+    setPixmap(QPixmap(":/images/resources/obstacle_tree.png"));
     int xRandomizer = QRandomGenerator::global()->bounded(200);
     setPos(QPoint(0,0)+QPoint(660 + xRandomizer,500));
     xAnimation = new QPropertyAnimation(this, "x", this);

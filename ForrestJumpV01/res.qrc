@@ -4,5 +4,8 @@
         <file>resources/gameover.mp3</file>
         <file>resources/jump_dbz.mp3</file>
     </qresource>
-    <qresource prefix="/images"/>
+    <qresource prefix="/images">
+        <file>resources/obstacle_tree.png</file>
+        <file>resources/player_luffy.png</file>
+    </qresource>
 </RCC>

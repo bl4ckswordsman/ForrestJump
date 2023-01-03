@@ -2,15 +2,15 @@
 #define OBSTACLE_H
 
 #include <QObject>
-#include <QGraphicsRectItem>
+#include <QGraphicsPixmapItem>
 #include <QPropertyAnimation>
 #include <QGraphicsScene>
 
-class Obstacle : public QObject, public QGraphicsRectItem{
+class Obstacle : public QObject, public QGraphicsPixmapItem{
     Q_OBJECT
     Q_PROPERTY(qreal x READ x WRITE setX)// NOTIFY nameChanged)
 public:
-    explicit Obstacle(QGraphicsRectItem* parent = nullptr);
+    explicit Obstacle(QGraphicsItem* parent = nullptr);
     ~Obstacle();
     void setX(qreal x);
 

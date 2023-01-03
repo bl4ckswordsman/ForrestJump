@@ -6,7 +6,7 @@
 
 
 
-Player::Player(QGraphicsItem *parent): QGraphicsRectItem(parent){
+Player::Player(QGraphicsItem *parent): QGraphicsPixmapItem(parent){
     // setting up the jumping sound effect
     jumpSFX = new QMediaPlayer();
     QAudioOutput* audioOutput2 = new QAudioOutput();
@@ -14,8 +14,10 @@ Player::Player(QGraphicsItem *parent): QGraphicsRectItem(parent){
     audioOutput2->setVolume(0.5);
     jumpSFX->setSource(QUrl("qrc:/audio/resources/jump_dbz.mp3"));
 
-    this->setRect(0,0,xSz,ySz); // changing the rect from 0x0 (default) to 100x100 pixels
-    // making the player focusable and setting focus on it
+        //this->setRect(0,0,xSz,ySz); // changing the rect from 0x0 (default) to 100x100 pixels
+        // making the player focusable and setting focus on it
+    // setting graphic
+    setPixmap(QPixmap(":/images/resources/player_luffy.png"));
     this->setPos(5,500);
     this->setFlag(QGraphicsItem::ItemIsFocusable);
     this->setFocus();

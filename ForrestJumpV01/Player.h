@@ -2,13 +2,13 @@
 #define PLAYER_H
 
 #include <QObject>
-#include <QGraphicsRectItem>
+#include <QGraphicsPixmapItem>
 #include <QProperty>
 #include <QPropertyAnimation>
 #include <QMediaPlayer>
 
 
-class Player : public QObject, public QGraphicsRectItem{
+class Player : public QObject, public QGraphicsPixmapItem{
     Q_OBJECT
     Q_PROPERTY(qreal y READ y WRITE setY)
 public:
