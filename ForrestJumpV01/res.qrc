@@ -7,5 +7,6 @@
     <qresource prefix="/images">
         <file>resources/obstacle_tree.png</file>
         <file>resources/player_luffy.png</file>
+        <file>resources/forrestjump.png</file>
     </qresource>
 </RCC>

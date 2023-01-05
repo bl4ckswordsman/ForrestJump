@@ -1,6 +1,8 @@
 #include "Obstacle.h"
 #include <QRandomGenerator>
 #include <QDebug>
+#include <QTimer>
+
 
 Obstacle::Obstacle(QGraphicsItem* parent):
     QGraphicsPixmapItem(parent){
@@ -9,7 +11,7 @@ Obstacle::Obstacle(QGraphicsItem* parent):
     int xRandomizer = QRandomGenerator::global()->bounded(200);
     setPos(QPoint(0,0)+QPoint(660 + xRandomizer,500));
     xAnimation = new QPropertyAnimation(this, "x", this);
-    xAnimation->setEndValue(-660);
+    xAnimation->setEndValue(-150);
     xAnimation->setEasingCurve(QEasingCurve::Linear);
     xAnimation->setDuration(1500);
     connect(xAnimation, &QPropertyAnimation::finished,[=](){
@@ -21,6 +23,8 @@ Obstacle::Obstacle(QGraphicsItem* parent):
     xAnimation->start();
 
 
+
+
 }
 
 Obstacle::~Obstacle(){
@@ -28,7 +32,13 @@ Obstacle::~Obstacle(){
 
 }
 
+void Obstacle::freezeInPlace(){
+    xAnimation->stop();
+}
+
 void Obstacle::setX(qreal x){
-    moveBy(x-this->x(),0);
+    moveBy(x - this->x(),0);
     //qDebug() << this->x();
 }
+
+

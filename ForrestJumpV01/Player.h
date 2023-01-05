@@ -8,6 +8,7 @@
 #include <QMediaPlayer>
 
 
+
 class Player : public QObject, public QGraphicsPixmapItem{
     Q_OBJECT
     Q_PROPERTY(qreal y READ y WRITE setY)
@@ -15,7 +16,7 @@ public:
     Player(QGraphicsItem *parent = nullptr);
     void keyPressEvent(QKeyEvent *event);
     void jump();
-
+    void freezeInPlace();
 
     int getXSz() const;
 
@@ -24,8 +25,11 @@ public:
 
     qreal y() const;
 
-//public slots:
+    QList<QGraphicsItem*> collidingItemsContainer;
+
+public slots:
     //void spawnEnemies();
+    void updateCollisionCont();
 private:
     const int xSz = 100;
     const int ySz = 100;

@@ -1,11 +1,10 @@
 #include "HUD.h"
-#include <QTimer>
+
 #include <QFont>
 #include <QDebug>
 
-HUD::HUD(QGraphicsItem *parent): QGraphicsTextItem(parent){
-    // intializing score to 0
-    score = 0;
+HUD::HUD(QGraphicsItem *parent): QGraphicsTextItem(parent), score(0){
+
     //setPlainText(QString("Score: ")+QString::number(score));
 
     setDefaultTextColor(Qt::blue);
@@ -16,15 +15,27 @@ HUD::HUD(QGraphicsItem *parent): QGraphicsTextItem(parent){
 //    connect(&timer, SIGNAL(timeout()), this, SLOT(scoreIncrement()));
 //    timer.start(1000); // 1000 ms = 1 second
 
-    QTimer* timer = new QTimer(this);
-    connect(timer,&QTimer::timeout,[=](){
+    HUDTimer = new QTimer(this);
+    connect(HUDTimer,&QTimer::timeout,[=](){
         scoreIncrement();
     });
-    timer->start(1000);
+    HUDTimer->start(1000);
 
 }
 
 void HUD::scoreIncrement(){
-    setPlainText(QString("Score: ")+QString::number(score++));
-    qDebug() << score;
+        setPlainText(QString("Score: ")+QString::number(score));
+        score++;
+
+}
+
+int HUD::getScore() const{
+    if (score==0){
+        return score;
+    }
+    return score-1;
+}
+
+void HUD::stopTimer(){
+    HUDTimer->stop();
 }

@@ -3,10 +3,16 @@
 #include <QKeyEvent>
 #include <QDebug>
 #include <QAudioOutput>
-
+#include <QTimer>
 
 
 Player::Player(QGraphicsItem *parent): QGraphicsPixmapItem(parent){
+    // setting up graphic
+    setPixmap(QPixmap(":/images/resources/player_luffy.png"));
+    this->setPos(5,500);
+    this->setFlag(QGraphicsItem::ItemIsFocusable);
+    this->setFocus();
+
     // setting up the jumping sound effect
     jumpSFX = new QMediaPlayer();
     QAudioOutput* audioOutput2 = new QAudioOutput();
@@ -14,17 +20,12 @@ Player::Player(QGraphicsItem *parent): QGraphicsPixmapItem(parent){
     audioOutput2->setVolume(0.5);
     jumpSFX->setSource(QUrl("qrc:/audio/resources/jump_dbz.mp3"));
 
-        //this->setRect(0,0,xSz,ySz); // changing the rect from 0x0 (default) to 100x100 pixels
-        // making the player focusable and setting focus on it
-    // setting graphic
-    setPixmap(QPixmap(":/images/resources/player_luffy.png"));
-    this->setPos(5,500);
-    this->setFlag(QGraphicsItem::ItemIsFocusable);
-    this->setFocus();
-
+    // setting up the jump animation
     jumpAnimation = new QPropertyAnimation(this, "y", this);
     jumpAnimation->setDuration(300);
     jumpAnimation->setEasingCurve(QEasingCurve::InQuad);
+
+
 
 
 
@@ -33,34 +34,15 @@ Player::Player(QGraphicsItem *parent): QGraphicsPixmapItem(parent){
 
 void Player::keyPressEvent(QKeyEvent *event){
     if (event->key() == Qt::Key_Up || event->key() == Qt::Key_Space){
-        //setPos(x(), y()-10);
         jump();
 
-        // playing jumping sound effect
+        // playing jumping sound effect, configuring playback scenarios
         if (jumpSFX->playbackState()  == QMediaPlayer::PlayingState) {
             jumpSFX->setPosition(0);
         }
         else if (jumpSFX->playbackState() == QMediaPlayer::StoppedState) {
             jumpSFX->play();
         }
-
-
-
-        /*QPropertyAnimation* animation = new QPropertyAnimation(this, "y", this);
-        animation->setDuration(500);
-        animation->setStartValue(scenePos().y());
-        animation->setEasingCurve(QEasingCurve::InQuad);
-        animation->setEndValue(200);
-        animation->start();
-        //QPropertyAnimation* animation2 = new QPropertyAnimation(this, "y", this);
-        //animation2->setDuration(500);
-        //animation2->setStartValue(scenePos().y());
-        //animation2->setEasingCurve(QEasingCurve::InQuad);
-        connect(animation, &QPropertyAnimation::finished,this);
-        //animation->setEndValue(500);
-
-        animation->start();*/
-
     }
 }
 
@@ -69,12 +51,16 @@ void Player::jump(){
         return;
     }
     isJumping = true;
-    jumpAnimation->setStartValue(y());   //pos());
-    jumpAnimation->setEndValue(y()-200);     //QPointF(pos().x(), pos().y() - 200));
-    // Connecting the animation's finished signal to the jumpFinished slot
+    jumpAnimation->setStartValue(y());
+    jumpAnimation->setEndValue(y()-200);
+    // Connecting the animation's finished signal to the fallDown slot
     connect(jumpAnimation, &QPropertyAnimation::finished, this, &Player::fallDown);
     qDebug() << "jumping";
     jumpAnimation->start();
+}
+
+void Player::freezeInPlace(){
+    jumpAnimation->stop();
 }
 
 int Player::getXSz() const{
@@ -113,6 +99,13 @@ void Player::fallDown(){
 void Player::jumpFinished(){
     isJumping = false;
     jumpAnimation->disconnect(this);
+}
+
+void Player::updateCollisionCont(){
+    //storing collision information if player collides with obstacle
+    collidingItemsContainer = collidingItems();
+    /*if (!collidingItemsContainer.isEmpty())
+        this->scene()->clear();*/
 }
 
 

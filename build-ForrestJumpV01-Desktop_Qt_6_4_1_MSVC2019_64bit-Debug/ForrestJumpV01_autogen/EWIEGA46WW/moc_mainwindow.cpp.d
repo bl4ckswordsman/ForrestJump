@@ -151,5 +151,4 @@ C:/Users/amari/OneDrive\ -\ Mittuniversitetet/2022-2023/2022-11/DT079G/Project/F
   C:/Qt/6.4.1/msvc2019_64/include/QtWidgets/qwidget.h \
   C:/Users/amari/OneDrive\ -\ Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/ForrestJumpV01/Game.h \
   C:/Users/amari/OneDrive\ -\ Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/ForrestJumpV01/HUD.h \
-  C:/Users/amari/OneDrive\ -\ Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/ForrestJumpV01/Obstacle.h \
   C:/Users/amari/OneDrive\ -\ Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/ForrestJumpV01/Player.h
