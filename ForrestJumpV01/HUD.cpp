@@ -7,7 +7,7 @@ HUD::HUD(QGraphicsItem *parent): QGraphicsTextItem(parent), score(0){
 
     //setPlainText(QString("Score: ")+QString::number(score));
 
-    setDefaultTextColor(Qt::blue);
+    setDefaultTextColor(Qt::white);
     setFont(QFont("times",16));
 
 //    QTimer timer;
@@ -26,7 +26,6 @@ HUD::HUD(QGraphicsItem *parent): QGraphicsTextItem(parent), score(0){
 void HUD::scoreIncrement(){
         setPlainText(QString("Score: ")+QString::number(score));
         score++;
-
 }
 
 int HUD::getScore() const{

@@ -8,5 +8,9 @@
         <file>resources/obstacle_tree.png</file>
         <file>resources/player_luffy.png</file>
         <file>resources/forrestjump.png</file>
+        <file>resources/bg.png</file>
+    </qresource>
+    <qresource prefix="/data">
+        <file>resources/scores.txt</file>
     </qresource>
 </RCC>

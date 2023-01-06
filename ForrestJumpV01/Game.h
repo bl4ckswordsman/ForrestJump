@@ -28,6 +28,8 @@ private:
     void initiateGameElements();
     void setUpObstacleTimers();
     void freezeGame();
+    void saveScore(int score);
+    void checkHighScore(int score);
     const int xSize = 800;     // game scene width
     const int ySize = 600;     // game scene height
 
@@ -36,6 +38,7 @@ private:
     QTimer* collisionT;
 
     QGraphicsScene* scene;
+    QGraphicsPixmapItem* bg;
     Player* player;
     HUD* hud;
     QMediaPlayer* music;

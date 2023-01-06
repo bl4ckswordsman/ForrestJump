@@ -7,11 +7,16 @@
 #include <QGraphicsTextItem>
 #include <QPushButton>
 #include <QFont>
+#include <QGraphicsPixmapItem>
+#include <QFile>
+#include <QMessageBox>
+#include <QTextStream>
 
 
 Game::Game(QWidget *parent): QGraphicsView(parent){
-    initiateGameElements();
 
+
+    initiateGameElements();
 }
 
 void Game::collisionCheck(){
@@ -28,8 +33,18 @@ void Game::initiateGameElements(){
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(xSize,ySize);
 
+    // adding background image
+    bg = new QGraphicsPixmapItem();
+    bg->setPixmap(QPixmap(":/images/resources/bg.png"));
+    bg->setPos(0,0);
+    //bg->setZValue(-1);
+    //bg->setFlag(QGraphicsItem::ItemIsFocusable);
+    //bg->setFocus();
+    scene->addItem(bg);
+
     // creating the player
     player = new Player();
+    player->jumpsAllowed = true;
     scene->addItem(player);
     collisionT = new QTimer();
     connect(collisionT,SIGNAL(timeout()),this,SLOT(gameOver()));
@@ -88,44 +103,77 @@ void Game::freezeGame(){
 
 }
 
+void Game::saveScore(int score){
+    QFile file("scores.txt");
+    if (!file.open(QIODevice::Append | QIODevice::Text)){
+        QMessageBox::critical(nullptr, "Error", "Error opening scores file");
+        return;
+    }
+    QTextStream out(&file);
+    out << score << Qt::endl;
+    file.close();
+}
+
+void Game::checkHighScore(int score){
+    QFile file("scores.txt");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
+        QMessageBox::critical(nullptr, "Error", "Error opening scores file");
+        return;
+    }
+    QTextStream in(&file);
+    int highScore = 0;
+    int tempScore;
+    while (!in.atEnd()){
+        in >> tempScore;
+        if (tempScore > highScore){
+            highScore = tempScore;
+        }
+    }
+    file.close();
+
+    if (score > highScore){
+        qDebug() << "New HIGHSCORE";
+        QMessageBox::information(nullptr, "Congratulations", "You have reached a new high score!");
+    }
+}
+
 void Game::gameOver(){
 
     player->updateCollisionCont();
-    if (!player->collidingItemsContainer.isEmpty()){
-        freezeGame();
-        music->stop();
-        music = new QMediaPlayer();
-        QAudioOutput* audioOutput2 = new QAudioOutput();
-        music->setAudioOutput(audioOutput2);
-        music->setSource(QUrl("qrc:/audio/resources/gameover.mp3"));
-        music->play();
-        auto currentScore = hud->getScore();
-        //scene->clear();
-        this->disconnect();
-        /*auto scene2 = new QGraphicsScene();
-        scene2->setSceneRect(0,0,xSize,ySize);
-        setScene(scene2);
-        setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        setFixedSize(xSize,ySize);
-        //this->initiateGameElements();*/
+    for (auto collidedItem:player->collidingItemsContainer){
+        if (typeid(*(collidedItem)) == typeid(Obstacle)){
+            freezeGame();
+            music->stop();
+            music = new QMediaPlayer();
+            QAudioOutput* audioOutput2 = new QAudioOutput();
+            music->setAudioOutput(audioOutput2);
+            music->setSource(QUrl("qrc:/audio/resources/gameover.mp3"));
+            music->play();
+            auto currentScore = hud->getScore();
+            this->disconnect();
 
-        auto gameOVER = new QGraphicsTextItem;
-        gameOVER->setDefaultTextColor(Qt::red);
-        gameOVER->setFont(QFont("times",30));
-        gameOVER->setPlainText(QString("GAME OVER! Your score: ")+QString::number(currentScore));
-        gameOVER->setPos(150,100);
-        scene->addItem(gameOVER);
 
-        auto playAgainB = new QPushButton(nullptr);
-        playAgainB->setText("New Game");
-        playAgainB->move(350, 200);
-        playAgainB->setFixedSize(100, 50);
-        QFont font("Arial", 12);
-        playAgainB->setFont(font);
-        scene->addWidget(playAgainB);
-        connect(playAgainB, &QPushButton::clicked, this, &Game::newGame);
 
+
+            auto gameOVER = new QGraphicsTextItem;
+            gameOVER->setDefaultTextColor(Qt::red);
+            gameOVER->setFont(QFont("times",30));
+            gameOVER->setPlainText(QString("GAME OVER! Your score: ")+QString::number(currentScore));
+            gameOVER->setPos(130,100);
+            scene->addItem(gameOVER);
+            checkHighScore(currentScore);
+            saveScore(currentScore);
+
+            auto playAgainB = new QPushButton(nullptr);
+            playAgainB->setText("New Game");
+            playAgainB->move(330, 200);
+            playAgainB->setFixedSize(100, 50);
+            QFont font("Arial", 12);
+            playAgainB->setFont(font);
+            scene->addWidget(playAgainB);
+            connect(playAgainB, &QPushButton::clicked, this, &Game::newGame);
+
+        }
     }
 
     //disconnect
@@ -138,5 +186,6 @@ void Game::newGame(){
 
     this->hud = new HUD();*/
     delete this->hud;
+    //scene->clear();
     initiateGameElements();
 }

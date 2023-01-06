@@ -26,13 +26,14 @@ public:
     qreal y() const;
 
     QList<QGraphicsItem*> collidingItemsContainer;
-
+    bool jumpsAllowed{false};
 public slots:
     //void spawnEnemies();
     void updateCollisionCont();
 private:
     const int xSz = 100;
     const int ySz = 100;
+
     QPropertyAnimation* jumpAnimation;
     qreal m_y;
     bool isJumping = false;   //prevent double jumping

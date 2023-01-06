@@ -34,19 +34,22 @@ Player::Player(QGraphicsItem *parent): QGraphicsPixmapItem(parent){
 
 void Player::keyPressEvent(QKeyEvent *event){
     if (event->key() == Qt::Key_Up || event->key() == Qt::Key_Space){
-        jump();
+        if (jumpsAllowed){
+            jump();
 
-        // playing jumping sound effect, configuring playback scenarios
-        if (jumpSFX->playbackState()  == QMediaPlayer::PlayingState) {
-            jumpSFX->setPosition(0);
-        }
-        else if (jumpSFX->playbackState() == QMediaPlayer::StoppedState) {
-            jumpSFX->play();
+            // playing jumping sound effect, configuring playback scenarios
+            if (jumpSFX->playbackState()  == QMediaPlayer::PlayingState) {
+                jumpSFX->setPosition(0);
+            }
+            else if (jumpSFX->playbackState() == QMediaPlayer::StoppedState) {
+                jumpSFX->play();
+            }
         }
     }
 }
 
 void Player::jump(){
+
     if (isJumping){
         return;
     }
@@ -57,10 +60,12 @@ void Player::jump(){
     connect(jumpAnimation, &QPropertyAnimation::finished, this, &Player::fallDown);
     qDebug() << "jumping";
     jumpAnimation->start();
+
 }
 
 void Player::freezeInPlace(){
     jumpAnimation->stop();
+    jumpsAllowed = false;
 }
 
 int Player::getXSz() const{
