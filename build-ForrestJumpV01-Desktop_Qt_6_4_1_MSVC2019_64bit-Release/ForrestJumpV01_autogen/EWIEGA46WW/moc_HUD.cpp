@@ -60,7 +60,7 @@ Q_CONSTINIT static const uint qt_meta_data_HUD[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   20,    2, 0x0a,    1 /* Public */,
+       1,    0,   20,    2, 0x08,    1 /* Private */,
 
  // slots: parameters
     QMetaType::Void,

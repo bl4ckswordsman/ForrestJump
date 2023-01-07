@@ -1,0 +1,56 @@
+\hypertarget{_game_8h_source}{}\doxysection{Game.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ DT079G\ Project\ -\/\ Forrest\ Jump\ game}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ Amarildo\ Rajta\ 2023-\/01-\/07\ */}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ GAME\_H}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ GAME\_H}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QGraphicsView>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QGraphicsScene>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QMediaPlayer>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QPushButton>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QGraphicsProxyWidget>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Player.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}HUD.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game}{Game}}\ :\ \textcolor{keyword}{public}\ QGraphicsView\{}
+\DoxyCodeLine{00023\ Q\_OBJECT}
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_game}{Game}}(QWidget*\ parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ initiateGameElements();}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ setUpObstacleTimer();}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ playMusic();}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ freezeGame();}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ saveScore(\textcolor{keywordtype}{int}\ score);}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ checkHighScore(\textcolor{keywordtype}{int}\ score);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ xSize\ =\ 800;}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ ySize\ =\ 600;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00071\ \ \ \ \ QTimer*\ obstacleTimer;}
+\DoxyCodeLine{00075\ \ \ \ \ QTimer*\ collisionT;}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00080\ \ \ \ \ QGraphicsScene*\ scene;}
+\DoxyCodeLine{00084\ \ \ \ \ QGraphicsPixmapItem*\ bg;}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}*\ player;}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{class_h_u_d}{HUD}}*\ hud;}
+\DoxyCodeLine{00096\ \ \ \ \ QAudioOutput*\ audioOutput;}
+\DoxyCodeLine{00100\ \ \ \ \ QMediaPlayer*\ music;}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00105\ \ \ \ \ QGraphicsTextItem*\ gameOverLabel;}
+\DoxyCodeLine{00109\ \ \ \ \ QGraphicsTextItem*\ highScoreLabel;}
+\DoxyCodeLine{00113\ \ \ \ \ QPushButton*\ playAgainB;}
+\DoxyCodeLine{00117\ \ \ \ \ QGraphicsProxyWidget*\ playAgainWidget;}
+\DoxyCodeLine{00118\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{void}\ gameOver();}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ newGame();}
+\DoxyCodeLine{00127\ \};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GAME\_H}}
+
+\end{DoxyCode}

@@ -1,3 +1,5 @@
+/* DT079G Project - Forrest Jump game
+ *  Amarildo Rajta 2023-01-07 */
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include <QGraphicsPixmapItem>

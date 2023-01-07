@@ -1,3 +1,5 @@
+/* DT079G Project - Forrest Jump game
+ *  Amarildo Rajta 2023-01-07 */
 #include "Game.h"
 #include "Obstacle.h"
 #include <QPropertyAnimation>
@@ -13,6 +15,7 @@
 Game::Game(QWidget *parent): QGraphicsView(parent){
     initiateGameElements();
 }
+
 
 
 void Game::initiateGameElements(){
@@ -175,7 +178,7 @@ void Game::gameOver(){
 }
 
 void Game::newGame(){
-    // removing and deleting unneccesary items
+    // removing and deleting unnecessary items
     scene->removeItem(hud);
     delete hud;
     scene->removeItem(gameOverLabel);

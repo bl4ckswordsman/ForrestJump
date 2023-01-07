@@ -63,7 +63,7 @@ Q_CONSTINIT static const uint qt_meta_data_Obstacle[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,   20,    2, 0x0a,    2 /* Public */,
+       1,    1,   20,    2, 0x08,    2 /* Private */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QReal,    3,

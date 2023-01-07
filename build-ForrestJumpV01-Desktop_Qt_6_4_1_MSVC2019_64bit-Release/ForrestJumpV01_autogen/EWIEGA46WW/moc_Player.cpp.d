@@ -107,8 +107,10 @@ C:/Users/amari/OneDrive\ -\ Mittuniversitetet/2022-2023/2022-11/DT079G/Project/F
   C:/Qt/6.4.1/msvc2019_64/include/QtGui/qtransform.h \
   C:/Qt/6.4.1/msvc2019_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.4.1/msvc2019_64/include/QtGui/qwindowdefs_win.h \
+  C:/Qt/6.4.1/msvc2019_64/include/QtMultimedia/QAudioOutput \
   C:/Qt/6.4.1/msvc2019_64/include/QtMultimedia/QMediaPlayer \
   C:/Qt/6.4.1/msvc2019_64/include/QtMultimedia/qaudio.h \
+  C:/Qt/6.4.1/msvc2019_64/include/QtMultimedia/qaudiooutput.h \
   C:/Qt/6.4.1/msvc2019_64/include/QtMultimedia/qmediaenumdebug.h \
   C:/Qt/6.4.1/msvc2019_64/include/QtMultimedia/qmediaplayer.h \
   C:/Qt/6.4.1/msvc2019_64/include/QtMultimedia/qtmultimedia-config.h \

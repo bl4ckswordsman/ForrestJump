@@ -1,80 +1,72 @@
 # ninja log v5
-33	370	6947245576619405	ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
+33	1934	6948130890750350	ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
+33	1934	6948130890750350	ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
 193	488	6947240805210935	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/EWIEGA46WW/qrc_res.cpp	43756e0b04322edf
-33	370	6947245576619405	ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
-33	370	6947245576619405	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
-33	370	6947245576619405	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
-745	3624	6947234957750357	CMakeFiles/ForrestJumpV01.dir/HUD.cpp.obj	17fc346064aa846b
+33	1934	6948130890750350	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
+33	1934	6948130890750350	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
 193	488	6947240805210935	ForrestJumpV01_autogen/EWIEGA46WW/qrc_res.cpp	43756e0b04322edf
-378	4344	6947245616355951	CMakeFiles/ForrestJumpV01.dir/mainwindow.cpp.obj	f48be3e5c4a5e7e8
-736	3691	6947234958460111	CMakeFiles/ForrestJumpV01.dir/Player.cpp.obj	e848e82b391a119d
-722	3857	6947234960202801	CMakeFiles/ForrestJumpV01.dir/ForrestJumpV01_autogen/mocs_compilation.cpp.obj	526f5eccbfa554b5
-384	4390	6947245616796009	CMakeFiles/ForrestJumpV01.dir/Game.cpp.obj	bb33d87cabf56f27
-725	3587	6947234957480228	CMakeFiles/ForrestJumpV01.dir/main.cpp.obj	8bd034425aca13c0
-741	3635	6947234957810293	CMakeFiles/ForrestJumpV01.dir/Obstacle.cpp.obj	8dc4113b542a7ffb
-16	46	0	CMakeFiles/clean.additional	321391b2684b2653
+1952	6196	6948130941728322	CMakeFiles/ForrestJumpV01.dir/HUD.cpp.obj	17fc346064aa846b
+1944	6483	6948130944667842	CMakeFiles/ForrestJumpV01.dir/mainwindow.cpp.obj	f48be3e5c4a5e7e8
+2600	7123	6948130296992824	CMakeFiles/ForrestJumpV01.dir/Player.cpp.obj	e848e82b391a119d
+1934	6452	6948130944367834	CMakeFiles/ForrestJumpV01.dir/ForrestJumpV01_autogen/mocs_compilation.cpp.obj	526f5eccbfa554b5
+1948	6847	6948130948279090	CMakeFiles/ForrestJumpV01.dir/Game.cpp.obj	bb33d87cabf56f27
+1940	6231	6948130942158626	CMakeFiles/ForrestJumpV01.dir/main.cpp.obj	8bd034425aca13c0
+2604	7800	6948130303831779	CMakeFiles/ForrestJumpV01.dir/Obstacle.cpp.obj	8dc4113b542a7ffb
 495	3357	6947240833773126	CMakeFiles/ForrestJumpV01.dir/ForrestJumpV01_autogen/EWIEGA46WW/qrc_res.cpp.obj	6b155f4a57214dbb
-4390	4609	6947245619005929	ForrestJumpV01.exe	64d2f6c0bfa11736
+16	46	0	CMakeFiles/clean.additional	321391b2684b2653
 27	5704	6947223774457253	build.ninja	89dea634edf4953
+6847	7063	6948130950469841	ForrestJumpV01.exe	64d2f6c0bfa11736
 46	59	0	clean	ef76bfa333b12344
-42	690	6947246965129705	ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
-42	690	6947246965129705	ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
-42	690	6947246965129705	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
-42	690	6947246965129705	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
-698	4623	6947247005091994	CMakeFiles/ForrestJumpV01.dir/mainwindow.cpp.obj	f48be3e5c4a5e7e8
-702	4774	6947247006582326	CMakeFiles/ForrestJumpV01.dir/Game.cpp.obj	bb33d87cabf56f27
-4774	4987	6947247008724220	ForrestJumpV01.exe	64d2f6c0bfa11736
-42	436	6947258294186762	ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
-42	436	6947258294186762	ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
-42	436	6947258294186762	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
-42	436	6947258294186762	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
-445	4886	6947258338893906	CMakeFiles/ForrestJumpV01.dir/mainwindow.cpp.obj	f48be3e5c4a5e7e8
-450	4926	6947258339274114	CMakeFiles/ForrestJumpV01.dir/Game.cpp.obj	bb33d87cabf56f27
-4927	5172	6947258341724027	ForrestJumpV01.exe	64d2f6c0bfa11736
-18	206	6947262140012431	ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
-18	206	6947262140012431	ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
-18	206	6947262140012431	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
-18	206	6947262140012431	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
-212	2149	6947262159412271	CMakeFiles/ForrestJumpV01.dir/mainwindow.cpp.obj	f48be3e5c4a5e7e8
-216	2479	6947262162692595	CMakeFiles/ForrestJumpV01.dir/Game.cpp.obj	bb33d87cabf56f27
-2479	2683	6947262164744965	ForrestJumpV01.exe	64d2f6c0bfa11736
-51	2459	6948017154695096	ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
-51	2459	6948017154695096	ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
-51	2459	6948017154695096	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
-51	2459	6948017154695096	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
-2463	5115	6948017183915643	CMakeFiles/ForrestJumpV01.dir/main.cpp.obj	8bd034425aca13c0
-2470	5217	6948017185001250	CMakeFiles/ForrestJumpV01.dir/mainwindow.cpp.obj	f48be3e5c4a5e7e8
-2459	5290	6948017185737042	CMakeFiles/ForrestJumpV01.dir/ForrestJumpV01_autogen/mocs_compilation.cpp.obj	526f5eccbfa554b5
-2475	5672	6948017189540324	CMakeFiles/ForrestJumpV01.dir/Game.cpp.obj	bb33d87cabf56f27
-5672	5979	6948017192617588	ForrestJumpV01.exe	64d2f6c0bfa11736
-40	1880	6948019224400209	ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
-40	1880	6948019224400209	ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
-40	1880	6948019224400209	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
-40	1880	6948019224400209	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
-1919	5400	6948019266867821	CMakeFiles/ForrestJumpV01.dir/Player.cpp.obj	e848e82b391a119d
-1888	5462	6948019267568043	CMakeFiles/ForrestJumpV01.dir/mainwindow.cpp.obj	f48be3e5c4a5e7e8
-1881	5466	6948019267683424	CMakeFiles/ForrestJumpV01.dir/ForrestJumpV01_autogen/mocs_compilation.cpp.obj	526f5eccbfa554b5
-1885	5477	6948019267823362	CMakeFiles/ForrestJumpV01.dir/main.cpp.obj	8bd034425aca13c0
-1915	6075	6948019273765088	CMakeFiles/ForrestJumpV01.dir/Game.cpp.obj	bb33d87cabf56f27
-6075	6299	6948019276016152	ForrestJumpV01.exe	64d2f6c0bfa11736
-37	415	6948022100656135	ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
-37	415	6948022100656135	ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
-37	415	6948022100656135	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
-37	415	6948022100656135	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
-423	4447	6948022140956836	CMakeFiles/ForrestJumpV01.dir/mainwindow.cpp.obj	f48be3e5c4a5e7e8
-427	4875	6948022145213865	CMakeFiles/ForrestJumpV01.dir/Game.cpp.obj	bb33d87cabf56f27
-4875	5100	6948022147486670	ForrestJumpV01.exe	64d2f6c0bfa11736
-45	635	6948023877033765	ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
-45	635	6948023877033765	ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
-45	635	6948023877033765	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
-45	635	6948023877033765	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
-642	4524	6948023916340191	CMakeFiles/ForrestJumpV01.dir/mainwindow.cpp.obj	f48be3e5c4a5e7e8
-647	4822	6948023919316323	CMakeFiles/ForrestJumpV01.dir/Game.cpp.obj	bb33d87cabf56f27
-4822	5031	6948023921407527	ForrestJumpV01.exe	64d2f6c0bfa11736
-38	564	6948024260364405	ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
-38	564	6948024260364405	ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
-38	564	6948024260364405	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
-38	564	6948024260364405	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
-572	4662	6948024301669660	CMakeFiles/ForrestJumpV01.dir/mainwindow.cpp.obj	f48be3e5c4a5e7e8
-577	4909	6948024304117766	CMakeFiles/ForrestJumpV01.dir/Game.cpp.obj	bb33d87cabf56f27
-4910	5135	6948024306378503	ForrestJumpV01.exe	64d2f6c0bfa11736
+40	1486	6948131507788728	ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
+40	1486	6948131507788728	ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
+40	1486	6948131507788728	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
+40	1486	6948131507788728	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
+1487	6281	6948131561231869	CMakeFiles/ForrestJumpV01.dir/ForrestJumpV01_autogen/mocs_compilation.cpp.obj	526f5eccbfa554b5
+1499	6301	6948131561431899	CMakeFiles/ForrestJumpV01.dir/Obstacle.cpp.obj	8dc4113b542a7ffb
+1491	6335	6948131561816986	CMakeFiles/ForrestJumpV01.dir/mainwindow.cpp.obj	f48be3e5c4a5e7e8
+1495	6736	6948131565805239	CMakeFiles/ForrestJumpV01.dir/Game.cpp.obj	bb33d87cabf56f27
+6736	6963	6948131568102652	ForrestJumpV01.exe	64d2f6c0bfa11736
+40	3022	6948132596499115	ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
+40	3022	6948132596499115	ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
+40	3022	6948132596499115	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
+40	3022	6948132596499115	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
+3027	6252	6948132642398970	CMakeFiles/ForrestJumpV01.dir/main.cpp.obj	8bd034425aca13c0
+3039	6299	6948132643059288	CMakeFiles/ForrestJumpV01.dir/Player.cpp.obj	e848e82b391a119d
+3031	6316	6948132643264817	CMakeFiles/ForrestJumpV01.dir/mainwindow.cpp.obj	f48be3e5c4a5e7e8
+3023	6324	6948132643374563	CMakeFiles/ForrestJumpV01.dir/ForrestJumpV01_autogen/mocs_compilation.cpp.obj	526f5eccbfa554b5
+3035	6714	6948132647268250	CMakeFiles/ForrestJumpV01.dir/Game.cpp.obj	bb33d87cabf56f27
+6714	6948	6948132649601252	ForrestJumpV01.exe	64d2f6c0bfa11736
+35	1694	6948133061431898	ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
+35	1694	6948133061431898	ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
+35	1694	6948133061431898	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
+35	1694	6948133061431898	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
+1710	5980	6948133111155006	CMakeFiles/ForrestJumpV01.dir/Player.cpp.obj	e848e82b391a119d
+1699	5984	6948133111065013	CMakeFiles/ForrestJumpV01.dir/main.cpp.obj	8bd034425aca13c0
+1694	6086	6948133112214927	CMakeFiles/ForrestJumpV01.dir/ForrestJumpV01_autogen/mocs_compilation.cpp.obj	526f5eccbfa554b5
+1703	6088	6948133112224928	CMakeFiles/ForrestJumpV01.dir/mainwindow.cpp.obj	f48be3e5c4a5e7e8
+1707	6533	6948133116652453	CMakeFiles/ForrestJumpV01.dir/Game.cpp.obj	bb33d87cabf56f27
+6533	6754	6948133118883123	ForrestJumpV01.exe	64d2f6c0bfa11736
+32	450	6948152097796018	ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
+32	450	6948152097796018	ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
+32	450	6948152097796018	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
+32	450	6948152097796018	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
+470	3015	6948152124441532	CMakeFiles/ForrestJumpV01.dir/Obstacle.cpp.obj	8dc4113b542a7ffb
+474	3036	6948152124481457	CMakeFiles/ForrestJumpV01.dir/HUD.cpp.obj	17fc346064aa846b
+463	3071	6948152125036793	CMakeFiles/ForrestJumpV01.dir/Player.cpp.obj	e848e82b391a119d
+453	3072	6948152124976829	CMakeFiles/ForrestJumpV01.dir/main.cpp.obj	8bd034425aca13c0
+450	3245	6948152126778323	CMakeFiles/ForrestJumpV01.dir/ForrestJumpV01_autogen/mocs_compilation.cpp.obj	526f5eccbfa554b5
+457	3293	6948152127268239	CMakeFiles/ForrestJumpV01.dir/mainwindow.cpp.obj	f48be3e5c4a5e7e8
+460	3569	6948152129983691	CMakeFiles/ForrestJumpV01.dir/Game.cpp.obj	bb33d87cabf56f27
+3569	3802	6948152132352929	ForrestJumpV01.exe	64d2f6c0bfa11736
+79	2909	6948155538996167	ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
+79	2909	6948155538996167	ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
+79	2909	6948155538996167	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/timestamp	ae8630aa07b4caca
+79	2909	6948155538996167	C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Release/ForrestJumpV01_autogen/mocs_compilation.cpp	ae8630aa07b4caca
+2947	7146	6948155589732388	CMakeFiles/ForrestJumpV01.dir/Player.cpp.obj	e848e82b391a119d
+2954	7154	6948155589692395	CMakeFiles/ForrestJumpV01.dir/HUD.cpp.obj	17fc346064aa846b
+2951	7371	6948155592119826	CMakeFiles/ForrestJumpV01.dir/Obstacle.cpp.obj	8dc4113b542a7ffb
+2914	7384	6948155592249846	CMakeFiles/ForrestJumpV01.dir/main.cpp.obj	8bd034425aca13c0
+2909	7579	6948155594191254	CMakeFiles/ForrestJumpV01.dir/ForrestJumpV01_autogen/mocs_compilation.cpp.obj	526f5eccbfa554b5
+2917	7667	6948155595061823	CMakeFiles/ForrestJumpV01.dir/mainwindow.cpp.obj	f48be3e5c4a5e7e8
+2943	8139	6948155599783478	CMakeFiles/ForrestJumpV01.dir/Game.cpp.obj	bb33d87cabf56f27
+8139	8536	6948155603758988	ForrestJumpV01.exe	64d2f6c0bfa11736
