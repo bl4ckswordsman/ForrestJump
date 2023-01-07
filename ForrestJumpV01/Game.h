@@ -6,6 +6,8 @@
 #include <QGraphicsScene>
 #include <QTimer>
 #include <QMediaPlayer>
+#include <QPushButton>
+#include <QGraphicsProxyWidget>
 #include "Player.h"
 #include "HUD.h"
 
@@ -18,15 +20,14 @@ class Game : public QGraphicsView{
 Q_OBJECT
 public:
     Game(QWidget* parent = nullptr);
-    //~Game();
 public slots:
-    void collisionCheck();
     void gameOver();
     void newGame();
 
 private:
     void initiateGameElements();
-    void setUpObstacleTimers();
+    void setUpObstacleTimer();
+    void playMusic();
     void freezeGame();
     void saveScore(int score);
     void checkHighScore(int score);
@@ -41,7 +42,12 @@ private:
     QGraphicsPixmapItem* bg;
     Player* player;
     HUD* hud;
+    QAudioOutput* audioOutput;
     QMediaPlayer* music;
+    QGraphicsTextItem* gameOverLabel;
+    QGraphicsTextItem* highScoreLabel;
+    QPushButton* playAgainB;
+    QGraphicsProxyWidget* playAgainWidget;
 };
 
 #endif // GAME_H

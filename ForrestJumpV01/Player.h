@@ -6,7 +6,7 @@
 #include <QProperty>
 #include <QPropertyAnimation>
 #include <QMediaPlayer>
-
+#include <QAudioOutput>
 
 
 class Player : public QObject, public QGraphicsPixmapItem{
@@ -14,13 +14,12 @@ class Player : public QObject, public QGraphicsPixmapItem{
     Q_PROPERTY(qreal y READ y WRITE setY)
 public:
     Player(QGraphicsItem *parent = nullptr);
+
     void keyPressEvent(QKeyEvent *event);
     void jump();
     void freezeInPlace();
+    void unfreeze();
 
-    int getXSz() const;
-
-    int getYSz() const;
     void setY(qreal Y);
 
     qreal y() const;
@@ -28,16 +27,16 @@ public:
     QList<QGraphicsItem*> collidingItemsContainer;
     bool jumpsAllowed{false};
 public slots:
-    //void spawnEnemies();
     void updateCollisionCont();
 private:
     const int xSz = 100;
     const int ySz = 100;
 
     QPropertyAnimation* jumpAnimation;
-    qreal m_y;
-    bool isJumping = false;   //prevent double jumping
+
+    bool isJumping;   //prevent double jumping
     QMediaPlayer* jumpSFX;    //jumping sound effect
+    QAudioOutput* audioOutputJ;
 private slots:
     void fallDown();
     void jumpFinished();

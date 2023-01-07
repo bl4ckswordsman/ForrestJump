@@ -21,10 +21,6 @@ Obstacle::Obstacle(QGraphicsItem* parent):
     });
 
     xAnimation->start();
-
-
-
-
 }
 
 Obstacle::~Obstacle(){
@@ -34,6 +30,10 @@ Obstacle::~Obstacle(){
 
 void Obstacle::freezeInPlace(){
     xAnimation->stop();
+}
+
+void Obstacle::startAnimation(){
+    xAnimation->start();
 }
 
 void Obstacle::setX(qreal x){

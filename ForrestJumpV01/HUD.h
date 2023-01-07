@@ -8,7 +8,6 @@ class HUD : public QGraphicsTextItem{
 Q_OBJECT
 public:
     HUD(QGraphicsItem* parent=nullptr);
-    //~HUD();
     int getScore() const;
     void stopTimer();
 

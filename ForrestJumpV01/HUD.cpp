@@ -4,18 +4,11 @@
 #include <QDebug>
 
 HUD::HUD(QGraphicsItem *parent): QGraphicsTextItem(parent), score(0){
-
-    //setPlainText(QString("Score: ")+QString::number(score));
-
     setDefaultTextColor(Qt::white);
     setFont(QFont("times",16));
 
-//    QTimer timer;
-
-//    connect(&timer, SIGNAL(timeout()), this, SLOT(scoreIncrement()));
-//    timer.start(1000); // 1000 ms = 1 second
-
     HUDTimer = new QTimer(this);
+    //connecting the scoreIncrement() to a timer with 1Hz (1/second) frequency
     connect(HUDTimer,&QTimer::timeout,[=](){
         scoreIncrement();
     });
