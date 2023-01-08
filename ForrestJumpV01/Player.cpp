@@ -32,7 +32,6 @@ void Player::keyPressEvent(QKeyEvent *event){
     if (event->key() == Qt::Key_Up || event->key() == Qt::Key_Space){
         if (jumpsAllowed){
             jump();
-
             // playing jumping sound effect, configuring playback scenarios
             if (jumpSFX->playbackState()  == QMediaPlayer::PlayingState) {
                 jumpSFX->setPosition(0);
@@ -45,7 +44,7 @@ void Player::keyPressEvent(QKeyEvent *event){
 }
 
 void Player::jump(){
-    // prevent double jumping and fall delay
+    // Preventing double jumping and delaying of the fall
     if (isJumping){
         return;
     }

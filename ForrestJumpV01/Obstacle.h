@@ -20,7 +20,7 @@ public:
      * \param parent The QGraphicsItem to use as a parent class, defaulted to nullptr
      */
     explicit Obstacle(QGraphicsItem* parent = nullptr);
-    ~Obstacle();
+    //~Obstacle();
 
     /*!
     /*! * \brief Stops the horizontal movement/animation

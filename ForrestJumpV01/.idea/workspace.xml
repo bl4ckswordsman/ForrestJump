@@ -16,16 +16,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a92efa6-9c6c-4632-9e50-b50252eca7e7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Game.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/Game.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HUD.h" beforeDir="false" afterPath="$PROJECT_DIR$/HUD.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Obstacle.h" beforeDir="false" afterPath="$PROJECT_DIR$/Obstacle.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/Player.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainwindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/mainwindow.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Debug/.qtc_clangd/.cache/clangd/index/mainwindow.h.E821E4BEE194CEBD.idx" beforeDir="false" afterPath="$PROJECT_DIR$/../build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Debug/.qtc_clangd/.cache/clangd/index/mainwindow.h.E821E4BEE194CEBD.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../build-ForrestJumpV01-Desktop_Qt_6_4_1_MSVC2019_64bit-Debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/_game_8h_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/_game_8h_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/_h_u_d_8h_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/_h_u_d_8h_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/_obstacle_8h_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/_obstacle_8h_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/_player_8h_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/_player_8h_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/annotated.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/annotated.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/class_game-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/class_game-members.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/class_game.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/class_game.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/class_h_u_d-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/class_h_u_d-members.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/class_h_u_d.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/class_h_u_d.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/class_main_window-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/class_main_window-members.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/class_main_window.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/class_main_window.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/class_obstacle-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/class_obstacle-members.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/class_obstacle.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/class_obstacle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/class_player-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/class_player-members.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/class_player.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/class_player.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/classes.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/classes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/files.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/files.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/functions.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/functions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/functions_func.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/functions_func.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/functions_vars.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/functions_vars.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/hierarchy.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/hierarchy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/mainwindow_8h_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/mainwindow_8h_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/_game_8h_source.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/_game_8h_source.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/_h_u_d_8h_source.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/_h_u_d_8h_source.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/_obstacle_8h_source.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/_obstacle_8h_source.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/_player_8h_source.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/_player_8h_source.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/annotated.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/annotated.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/class_game.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/class_game.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/class_h_u_d.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/class_h_u_d.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/class_main_window.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/class_main_window.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/class_obstacle.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/class_obstacle.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/class_player.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/class_player.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/files.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/files.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/mainwindow_8h_source.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/mainwindow_8h_source.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/refman.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/refman.tex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +105,7 @@
       <option name="presentableId" value="Default" />
       <updated>1672076315917</updated>
       <workItem from="1672076317839" duration="39000" />
-      <workItem from="1673105940794" duration="4948000" />
+      <workItem from="1673105940794" duration="5559000" />
     </task>
     <servers />
   </component>

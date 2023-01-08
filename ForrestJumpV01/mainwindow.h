@@ -4,9 +4,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "Game.h"
 
-extern Game* game;
+
+//extern Game* game;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

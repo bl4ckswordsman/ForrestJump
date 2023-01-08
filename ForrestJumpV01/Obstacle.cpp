@@ -8,27 +8,28 @@
 
 Obstacle::Obstacle(QGraphicsItem* parent):
     QGraphicsPixmapItem(parent){
-    //setRect(0,0,100,100);
+    // setting up the pixmap
     setPixmap(QPixmap(":/images/resources/obstacle_tree.png"));
     int xRandomizer = QRandomGenerator::global()->bounded(200);
     setPos(QPoint(0,0)+QPoint(660 + xRandomizer,500));
+    // setting up the animation
     xAnimation = new QPropertyAnimation(this, "x", this);
-    xAnimation->setEndValue(-150);
+    xAnimation->setEndValue(-150);      // animation ends at x=-150 (out of bounds)
     xAnimation->setEasingCurve(QEasingCurve::Linear);
     xAnimation->setDuration(1500);
     connect(xAnimation, &QPropertyAnimation::finished,[=](){
-        qDebug() << "Animation finished";
-        scene()->removeItem(this);
+        //qDebug() << "Animation finished";
+        scene()->removeItem(this);      //removes and deletes obstacle when animation ends
         delete this;
     });
 
     xAnimation->start();
 }
 
-Obstacle::~Obstacle(){
+/*Obstacle::~Obstacle(){
     qDebug() << "Obstacle deleted";
 
-}
+}*/
 
 void Obstacle::freezeInPlace(){
     xAnimation->stop();

@@ -2,6 +2,7 @@
  *  Amarildo Rajta 2023-01-07 */
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include "Game.h"
 #include <QGraphicsPixmapItem>
 #include <QLabel>
 #include <QPixmap>
@@ -26,7 +27,7 @@ MainWindow::~MainWindow(){
 
 
 void MainWindow::on_pushButton_clicked(){
-    game = new Game();
+    auto game = new Game();
     game->show();
     this->close();
 }
