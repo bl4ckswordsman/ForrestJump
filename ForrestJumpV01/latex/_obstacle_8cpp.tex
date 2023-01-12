@@ -1,0 +1,75 @@
+\doxysection{Obstacle.\+cpp File Reference}
+\label{_obstacle_8cpp}\index{Obstacle.cpp@{Obstacle.cpp}}
+{\ttfamily \#include \char`\"{}Obstacle.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$QRandom\+Generator$>$}\newline
+{\ttfamily \#include $<$QDebug$>$}\newline
+{\ttfamily \#include $<$QTimer$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Amarildo Rajta 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2023-\/01-\/07
+\end{DoxyDate}
+DT079G Project -\/ Forrest Jump game
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ Obstacle.cpp}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{Obstacle::Obstacle(QGraphicsItem*\ parent):}
+\DoxyCodeLine{\ \ \ \ QGraphicsPixmapItem(parent)\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ setting\ up\ the\ pixmap}}
+\DoxyCodeLine{\ \ \ \ setPixmap(QPixmap(\textcolor{stringliteral}{"{}:/images/resources/obstacle\_tree.png"{}}));}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//int\ xRandomizer\ =\ QRandomGenerator::global()-\/>bounded(200);}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ variant\ to\ QRandomGenerator::global()\ by\ std::uniform\_int\_distribution<>\ from\ the\ "{}random"{}\ STL\ :}}
+\DoxyCodeLine{\ \ \ \ std::uniform\_int\_distribution<>\ dist(0,200);}
+\DoxyCodeLine{\ \ \ \ std::mt19937\ rndNGen;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ xRandomizer\ =\ dist(rndNGen);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ setPos(QPoint(0,0)+QPoint(660\ +\ xRandomizer,500));}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ setting\ up\ the\ animation}}
+\DoxyCodeLine{\ \ \ \ xAnimation\ =\ \textcolor{keyword}{new}\ QPropertyAnimation(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}x"{}},\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\ \ \ \ xAnimation-\/>setEndValue(-\/150);\ \ \ \ \ \ \textcolor{comment}{//\ animation\ ends\ at\ x=-\/150\ (out\ of\ bounds)}}
+\DoxyCodeLine{\ \ \ \ xAnimation-\/>setEasingCurve(QEasingCurve::Linear);}
+\DoxyCodeLine{\ \ \ \ xAnimation-\/>setDuration(1500);}
+\DoxyCodeLine{\ \ \ \ connect(xAnimation,\ \&QPropertyAnimation::finished,[=]()\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//qDebug()\ <<\ "{}Animation\ finished"{};}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ scene()-\/>removeItem(\textcolor{keyword}{this});\ \ \ \ \ \ \textcolor{comment}{//removes\ and\ deletes\ obstacle\ when\ animation\ ends}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\ \ \ \ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ xAnimation-\/>start();}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/*Obstacle::\string~Obstacle()\{}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ qDebug()\ <<\ "{}Obstacle\ deleted"{};}}
+\DoxyCodeLine{\textcolor{comment}{}}
+\DoxyCodeLine{\textcolor{comment}{\}*/}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ Obstacle::freezeInPlace()\{}
+\DoxyCodeLine{\ \ \ \ xAnimation-\/>stop();}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ Obstacle::startAnimation()\{}
+\DoxyCodeLine{\ \ \ \ xAnimation-\/>start();}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ Obstacle::setX(qreal\ x)\{}
+\DoxyCodeLine{\ \ \ \ moveBy(x\ -\/\ this-\/>x(),0);}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//qDebug()\ <<\ this-\/>x();}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

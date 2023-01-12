@@ -1,5 +1,6 @@
-/* DT079G Project - Forrest Jump game
- *  Amarildo Rajta 2023-01-07 */
+/*! \author Amarildo Rajta \date 2023-01-07
+ *  \details DT079G Project - Forrest Jump game */
+//! \headerfile Obstacle.h
 #ifndef OBSTACLE_H
 #define OBSTACLE_H
 
@@ -23,8 +24,8 @@ public:
     //~Obstacle();
 
     /*!
-    /*! * \brief Stops the horizontal movement/animation
-    /*! */
+     * \brief Stops the horizontal movement/animation
+     */
     void freezeInPlace();
     /*!
      * \brief Starts the horizontal movement/animation

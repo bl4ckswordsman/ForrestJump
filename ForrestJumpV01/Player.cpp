@@ -1,5 +1,8 @@
-/* DT079G Project - Forrest Jump game
- *  Amarildo Rajta 2023-01-07 */
+/*! \author Amarildo Rajta \date 2023-01-07
+ *  \details DT079G Project - Forrest Jump game */
+//! \file
+//! \code Player.cpp
+
 #include "Player.h"
 #include <QGraphicsScene>
 #include <QKeyEvent>
@@ -93,5 +96,4 @@ void Player::updateCollisionCont(){
     collidingItemsContainer = collidingItems();
 }
 
-
-
+//! \endcode

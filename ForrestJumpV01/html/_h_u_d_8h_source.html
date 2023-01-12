@@ -74,33 +74,33 @@ $(function() {
   <div class="headertitle"><div class="title">HUD.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* DT079G Project - Forrest Jump game</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> *  Amarildo Rajta 2023-01-07 */</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef HUD_H</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define HUD_H</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QGraphicsTextItem&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QTimer&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_h_u_d.html">   12</a></span><span class="keyword">class </span><a class="code hl_class" href="class_h_u_d.html">HUD</a> : <span class="keyword">public</span> QGraphicsTextItem{</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>Q_OBJECT</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_class" href="class_h_u_d.html">HUD</a>(QGraphicsItem* parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_h_u_d.html#af56eee2c54a60298a6c8258f6ee003ca">getScore</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_h_u_d.html#afc3f2b5905cb8a1843fc018e20a9043f">stopTimer</a>();</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifndef HUD_H</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#define HUD_H</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QGraphicsTextItem&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QTimer&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_h_u_d.html">   13</a></span><span class="keyword">class </span><a class="code hl_class" href="class_h_u_d.html">HUD</a> : <span class="keyword">public</span> QGraphicsTextItem{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>Q_OBJECT</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_h_u_d.html#ac7341bc5e7a39030665acd7789eb8e67">   20</a></span>    <a class="code hl_function" href="class_h_u_d.html#ac7341bc5e7a39030665acd7789eb8e67">HUD</a>(QGraphicsItem* parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_h_u_d.html#af56eee2c54a60298a6c8258f6ee003ca">   25</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_h_u_d.html#af56eee2c54a60298a6c8258f6ee003ca">getScore</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_h_u_d.html#afc3f2b5905cb8a1843fc018e20a9043f">   29</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_h_u_d.html#afc3f2b5905cb8a1843fc018e20a9043f">stopTimer</a>();</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">int</span> score;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    QTimer* HUDTimer;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">private</span> slots:</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> scoreIncrement();</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif </span><span class="comment">// HUD_H</span></div>
-<div class="ttc" id="aclass_h_u_d_html"><div class="ttname"><a href="class_h_u_d.html">HUD</a></div><div class="ttdoc">The HUD(Heads Up Display) class.</div><div class="ttdef"><b>Definition:</b> HUD.h:12</div></div>
-<div class="ttc" id="aclass_h_u_d_html_af56eee2c54a60298a6c8258f6ee003ca"><div class="ttname"><a href="class_h_u_d.html#af56eee2c54a60298a6c8258f6ee003ca">HUD::getScore</a></div><div class="ttdeci">int getScore() const</div><div class="ttdoc">Gets the current score.</div><div class="ttdef"><b>Definition:</b> HUD.cpp:26</div></div>
-<div class="ttc" id="aclass_h_u_d_html_afc3f2b5905cb8a1843fc018e20a9043f"><div class="ttname"><a href="class_h_u_d.html#afc3f2b5905cb8a1843fc018e20a9043f">HUD::stopTimer</a></div><div class="ttdeci">void stopTimer()</div><div class="ttdoc">Stops the timer on which the score is based on.</div><div class="ttdef"><b>Definition:</b> HUD.cpp:33</div></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">int</span> score;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    QTimer* HUDTimer;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> scoreIncrement();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>};</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#endif </span><span class="comment">// HUD_H</span></div>
+<div class="ttc" id="aclass_h_u_d_html"><div class="ttname"><a href="class_h_u_d.html">HUD</a></div><div class="ttdoc">The HUD(Heads Up Display) class.</div><div class="ttdef"><b>Definition:</b> HUD.h:13</div></div>
+<div class="ttc" id="aclass_h_u_d_html_ac7341bc5e7a39030665acd7789eb8e67"><div class="ttname"><a href="class_h_u_d.html#ac7341bc5e7a39030665acd7789eb8e67">HUD::HUD</a></div><div class="ttdeci">HUD(QGraphicsItem *parent=nullptr)</div><div class="ttdoc">The HUD class constructor.</div></div>
+<div class="ttc" id="aclass_h_u_d_html_af56eee2c54a60298a6c8258f6ee003ca"><div class="ttname"><a href="class_h_u_d.html#af56eee2c54a60298a6c8258f6ee003ca">HUD::getScore</a></div><div class="ttdeci">int getScore() const</div><div class="ttdoc">Gets the current score.</div></div>
+<div class="ttc" id="aclass_h_u_d_html_afc3f2b5905cb8a1843fc018e20a9043f"><div class="ttname"><a href="class_h_u_d.html#afc3f2b5905cb8a1843fc018e20a9043f">HUD::stopTimer</a></div><div class="ttdeci">void stopTimer()</div><div class="ttdoc">Stops the timer on which the score is based on.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

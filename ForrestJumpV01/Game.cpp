@@ -1,5 +1,8 @@
-/* DT079G Project - Forrest Jump game
- *  Amarildo Rajta 2023-01-07 */
+/*! \author Amarildo Rajta \date 2023-01-07
+ *  \details DT079G Project - Forrest Jump game */
+//! \file
+//! \code Game.cpp
+
 #include "Game.h"
 #include "Obstacle.h"
 #include <QPropertyAnimation>
@@ -10,12 +13,23 @@
 #include <QFile>
 #include <QMessageBox>
 #include <QTextStream>
+#include <algorithm>
 
 
 Game::Game(QWidget *parent): QGraphicsView(parent){
     initiateGameElements();
 }
 
+
+struct FreezeObstacles{
+    void operator()(QGraphicsItem* item)
+    {
+        Obstacle* obst = dynamic_cast<Obstacle*>(item);
+        if (obst) {
+            obst->freezeInPlace();
+        }
+    }
+};
 
 
 void Game::initiateGameElements(){
@@ -58,6 +72,7 @@ void Game::initiateGameElements(){
     playAgainB = nullptr;
 }
 
+
 void Game::setUpObstacleTimer(){
     obstacleTimer = new QTimer(this);
     connect(obstacleTimer,&QTimer::timeout,[=](){
@@ -69,6 +84,7 @@ void Game::setUpObstacleTimer(){
 
 }
 
+
 void Game::playMusic(){
     music = new QMediaPlayer();
     audioOutput = new QAudioOutput();
@@ -77,20 +93,25 @@ void Game::playMusic(){
     music->play();
 }
 
+
 void Game::freezeGame(){
     obstacleTimer->stop();
     collisionT->stop();
     player->freezeInPlace();
     QList<QGraphicsItem*> sceneItems = items();
-    for (auto item:sceneItems){
+    /*for (auto item:sceneItems){
         Obstacle* obst = dynamic_cast<Obstacle*>(item);
         if (obst){
             obst->freezeInPlace();
         }
-    }
+    }*/     // Alternative method by using std::for_each with a functor FreezeObstacles() :
+
+    std::for_each(sceneItems.begin(), sceneItems.end(), FreezeObstacles());
+
     hud->stopTimer();
 
 }
+
 
 void Game::saveScore(int score){
     QFile file("scores.txt");
@@ -102,6 +123,7 @@ void Game::saveScore(int score){
     out << score << Qt::endl;
     file.close();
 }
+
 
 void Game::checkHighScore(int score){
     QFile file("scores.txt");
@@ -132,6 +154,7 @@ void Game::checkHighScore(int score){
         scene->addItem(highScoreLabel);
     }
 }
+
 
 void Game::gameOver(){
     player->updateCollisionCont();
@@ -177,6 +200,7 @@ void Game::gameOver(){
 
 }
 
+
 void Game::newGame(){
     // removing and deleting unnecessary items
     scene->removeItem(hud);
@@ -189,12 +213,20 @@ void Game::newGame(){
         scene->removeItem(highScoreLabel);
         delete highScoreLabel;
     }
-    for (auto item:sceneItems){
+    /*for (auto item:sceneItems){
         Obstacle* obst = dynamic_cast<Obstacle*>(item);
         if (obst){
             delete obst;
         }
-    }
+    }*/     // method replaced with std::for_each() :
+
+    std::for_each(sceneItems.begin(), sceneItems.end(), [](QGraphicsItem* item) {
+        Obstacle* obst = dynamic_cast<Obstacle*>(item);
+        if (obst) {
+            delete obst;
+        }
+    });
+
     delete music;
     delete audioOutput;
 
@@ -208,3 +240,5 @@ void Game::newGame(){
     hud = new HUD();
     scene->addItem(hud);
 }
+
+//! \endcode

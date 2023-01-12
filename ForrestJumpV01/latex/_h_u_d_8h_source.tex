@@ -1,29 +1,28 @@
 \doxysection{HUD.\+h}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{comment}{/*\ DT079G\ Project\ -\/\ Forrest\ Jump\ game}}
-\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ Amarildo\ Rajta\ 2023-\/01-\/07\ */}}
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ HUD\_H}}
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ HUD\_H}}
-\DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QGraphicsTextItem>}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QTimer>}}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }HUD\ :\ \textcolor{keyword}{public}\ QGraphicsTextItem\{}
-\DoxyCodeLine{00013\ Q\_OBJECT}
-\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00019\ \ \ \ \ HUD(QGraphicsItem*\ parent\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ getScore()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ stopTimer();}
-\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifndef\ HUD\_H}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ HUD\_H}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QGraphicsTextItem>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }HUD\ :\ \textcolor{keyword}{public}\ QGraphicsTextItem\{}
+\DoxyCodeLine{00014\ Q\_OBJECT}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ HUD(QGraphicsItem*\ parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ getScore()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ stopTimer();}
 \DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ score;}
-\DoxyCodeLine{00039\ \ \ \ \ QTimer*\ HUDTimer;}
-\DoxyCodeLine{00040\ \textcolor{keyword}{private}\ slots:}
-\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ scoreIncrement();}
-\DoxyCodeLine{00045\ \};}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ HUD\_H}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ score;}
+\DoxyCodeLine{00040\ \ \ \ \ QTimer*\ HUDTimer;}
+\DoxyCodeLine{00041\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ scoreIncrement();}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ HUD\_H}}
 
 \end{DoxyCode}

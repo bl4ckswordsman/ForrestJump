@@ -1,0 +1,268 @@
+\doxysection{Game.\+cpp File Reference}
+\label{_game_8cpp}\index{Game.cpp@{Game.cpp}}
+{\ttfamily \#include \char`\"{}Game.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Obstacle.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$QProperty\+Animation$>$}\newline
+{\ttfamily \#include $<$QAudio\+Output$>$}\newline
+{\ttfamily \#include $<$QGraphics\+Text\+Item$>$}\newline
+{\ttfamily \#include $<$QFont$>$}\newline
+{\ttfamily \#include $<$QGraphics\+Pixmap\+Item$>$}\newline
+{\ttfamily \#include $<$QFile$>$}\newline
+{\ttfamily \#include $<$QMessage\+Box$>$}\newline
+{\ttfamily \#include $<$QText\+Stream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Amarildo Rajta 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2023-\/01-\/07
+\end{DoxyDate}
+DT079G Project -\/ Forrest Jump game
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ Game.cpp}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{Game::Game(QWidget\ *parent):\ QGraphicsView(parent)\{}
+\DoxyCodeLine{\ \ \ \ initiateGameElements();}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{struct\ }FreezeObstacles\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ operator()(QGraphicsItem*\ item)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Obstacle*\ obst\ =\ \textcolor{keyword}{dynamic\_cast<}Obstacle*\textcolor{keyword}{>}(item);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (obst)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ obst-\/>freezeInPlace();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ Game::initiateGameElements()\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ creating\ the\ game\ scene}}
+\DoxyCodeLine{\ \ \ \ scene\ =\ \textcolor{keyword}{new}\ QGraphicsScene();}
+\DoxyCodeLine{\ \ \ \ scene-\/>setSceneRect(0,0,xSize,ySize);}
+\DoxyCodeLine{\ \ \ \ setScene(scene);}
+\DoxyCodeLine{\ \ \ \ setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);}
+\DoxyCodeLine{\ \ \ \ setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);}
+\DoxyCodeLine{\ \ \ \ setFixedSize(xSize,ySize);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ adding\ background\ image}}
+\DoxyCodeLine{\ \ \ \ bg\ =\ \textcolor{keyword}{new}\ QGraphicsPixmapItem();}
+\DoxyCodeLine{\ \ \ \ bg-\/>setPixmap(QPixmap(\textcolor{stringliteral}{"{}:/images/resources/bg.png"{}}));}
+\DoxyCodeLine{\ \ \ \ bg-\/>setPos(0,0);}
+\DoxyCodeLine{\ \ \ \ scene-\/>addItem(bg);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ creating\ the\ player}}
+\DoxyCodeLine{\ \ \ \ player\ =\ \textcolor{keyword}{new}\ Player();}
+\DoxyCodeLine{\ \ \ \ player-\/>jumpsAllowed\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \ \ scene-\/>addItem(player);}
+\DoxyCodeLine{\ \ \ \ collisionT\ =\ \textcolor{keyword}{new}\ QTimer();}
+\DoxyCodeLine{\ \ \ \ connect(collisionT,SIGNAL(timeout()),\textcolor{keyword}{this},SLOT(gameOver()));}
+\DoxyCodeLine{\ \ \ \ collisionT-\/>start(50);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ setUpObstacleTimer();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ creating\ the\ heads\ up\ display}}
+\DoxyCodeLine{\ \ \ \ hud\ =\ \textcolor{keyword}{new}\ HUD();}
+\DoxyCodeLine{\ \ \ \ hud-\/>setPos(5,5);}
+\DoxyCodeLine{\ \ \ \ scene-\/>addItem(hud);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ playing\ background\ music}}
+\DoxyCodeLine{\ \ \ \ playMusic();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ initializing\ components\ that\ will\ be\ used\ later}}
+\DoxyCodeLine{\ \ \ \ gameOverLabel\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\ \ \ \ highScoreLabel\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\ \ \ \ playAgainWidget\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\ \ \ \ playAgainB\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ Game::setUpObstacleTimer()\{}
+\DoxyCodeLine{\ \ \ \ obstacleTimer\ =\ \textcolor{keyword}{new}\ QTimer(\textcolor{keyword}{this});}
+\DoxyCodeLine{\ \ \ \ connect(obstacleTimer,\&QTimer::timeout,[=]()\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Obstacle*\ obstacle\ =\ \textcolor{keyword}{new}\ Obstacle();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ scene-\/>addItem(obstacle);}
+\DoxyCodeLine{\ \ \ \ \});}
+\DoxyCodeLine{\ \ \ \ obstacleTimer-\/>start(1000);}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ Game::playMusic()\{}
+\DoxyCodeLine{\ \ \ \ music\ =\ \textcolor{keyword}{new}\ QMediaPlayer();}
+\DoxyCodeLine{\ \ \ \ audioOutput\ =\ \textcolor{keyword}{new}\ QAudioOutput();}
+\DoxyCodeLine{\ \ \ \ music-\/>setAudioOutput(audioOutput);}
+\DoxyCodeLine{\ \ \ \ music-\/>setSource(QUrl(\textcolor{stringliteral}{"{}qrc:/audio/resources/theme\_OP.mp3"{}}));}
+\DoxyCodeLine{\ \ \ \ music-\/>play();}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ Game::freezeGame()\{}
+\DoxyCodeLine{\ \ \ \ obstacleTimer-\/>stop();}
+\DoxyCodeLine{\ \ \ \ collisionT-\/>stop();}
+\DoxyCodeLine{\ \ \ \ player-\/>freezeInPlace();}
+\DoxyCodeLine{\ \ \ \ QList<QGraphicsItem*>\ sceneItems\ =\ items();}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{/*for\ (auto\ item:sceneItems)\{}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ \ \ Obstacle*\ obst\ =\ dynamic\_cast<Obstacle*>(item);}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ \ \ if\ (obst)\{}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ obst-\/>freezeInPlace();}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \}*/}\ \ \ \ \ \textcolor{comment}{//\ Alternative\ method\ by\ using\ std::for\_each\ with\ a\ functor\ FreezeObstacles()\ :}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ std::for\_each(sceneItems.begin(),\ sceneItems.end(),\ FreezeObstacles());}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ hud-\/>stopTimer();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ Game::saveScore(\textcolor{keywordtype}{int}\ score)\{}
+\DoxyCodeLine{\ \ \ \ QFile\ file(\textcolor{stringliteral}{"{}scores.txt"{}});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (!file.open(QIODevice::Append\ |\ QIODevice::Text))\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{nullptr},\ \textcolor{stringliteral}{"{}Error"{}},\ \textcolor{stringliteral}{"{}Error\ opening\ scores\ file"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ QTextStream\ out(\&file);}
+\DoxyCodeLine{\ \ \ \ out\ <<\ score\ <<\ Qt::endl;}
+\DoxyCodeLine{\ \ \ \ file.close();}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ Game::checkHighScore(\textcolor{keywordtype}{int}\ score)\{}
+\DoxyCodeLine{\ \ \ \ QFile\ file(\textcolor{stringliteral}{"{}scores.txt"{}});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (!file.open(QIODevice::ReadOnly\ |\ QIODevice::Text))\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{nullptr},\ \textcolor{stringliteral}{"{}Error"{}},\ \textcolor{stringliteral}{"{}Error\ opening\ scores\ file"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ QTextStream\ in(\&file);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ highScore\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ tempScore;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}\ (!in.atEnd())\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ in\ >>\ tempScore;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tempScore\ >\ highScore)\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ highScore\ =\ tempScore;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ file.close();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (score\ >\ highScore)\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ QMessageBox::information(\textcolor{keyword}{nullptr},\ \textcolor{stringliteral}{"{}Congratulations"{}},\ \textcolor{stringliteral}{"{}You\ have\ reached\ a\ new\ high\ score!"{}});}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ highScoreLabel\ =\ \textcolor{keyword}{new}\ QGraphicsTextItem;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ highScoreLabel-\/>setDefaultTextColor(Qt::black);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ highScoreLabel-\/>setFont(QFont(\textcolor{stringliteral}{"{}times"{}},15));}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ highScoreLabel-\/>setPlainText(QString(\textcolor{stringliteral}{"{}Highscore:\ "{}})+QString::number(highScore));}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ highScoreLabel-\/>setPos(310,160);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ scene-\/>addItem(highScoreLabel);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ Game::gameOver()\{}
+\DoxyCodeLine{\ \ \ \ player-\/>updateCollisionCont();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ collidedItem:player-\/>collidingItemsContainer)\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{typeid}(*(collidedItem))\ ==\ \textcolor{keyword}{typeid}(Obstacle))\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ freezeGame();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ music-\/>stop();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ music;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ music\ =\ \textcolor{keyword}{new}\ QMediaPlayer();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ audioOutput;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ audioOutput\ =\ \textcolor{keyword}{new}\ QAudioOutput();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ music-\/>setAudioOutput(audioOutput);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ music-\/>setSource(QUrl(\textcolor{stringliteral}{"{}qrc:/audio/resources/gameover.mp3"{}}));}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ music-\/>play();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ currentScore\ =\ hud-\/>getScore();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ displaying\ a\ game\ over\ text\ label}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ gameOverLabel\ =\ \textcolor{keyword}{new}\ QGraphicsTextItem;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ gameOverLabel-\/>setDefaultTextColor(Qt::red);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ gameOverLabel-\/>setFont(QFont(\textcolor{stringliteral}{"{}times"{}},30));}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ gameOverLabel-\/>setPlainText(QString(\textcolor{stringliteral}{"{}GAME\ OVER!\ Your\ score:\ "{}})+QString::number(currentScore));}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ gameOverLabel-\/>setPos(130,100);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ scene-\/>addItem(gameOverLabel);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ checkHighScore(currentScore);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ saveScore(currentScore);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//adding\ a\ play\ again\ button\ and\ connecting\ its\ click\ to\ the\ newGame()\ function}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ playAgainB\ =\ \textcolor{keyword}{new}\ QPushButton(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ playAgainB-\/>setText(\textcolor{stringliteral}{"{}New\ Game"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ playAgainB-\/>move(330,\ 200);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ playAgainB-\/>setFixedSize(100,\ 50);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ QFont\ font(\textcolor{stringliteral}{"{}Arial"{}},\ 12);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ playAgainB-\/>setFont(font);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ playAgainWidget\ =\ \textcolor{keyword}{new}\ QGraphicsProxyWidget();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ playAgainWidget-\/>setWidget(playAgainB);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ scene-\/>addItem(playAgainWidget);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ connect(playAgainB,\ \&QPushButton::clicked,\ \textcolor{keyword}{this},\ \&Game::newGame);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ Game::newGame()\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ removing\ and\ deleting\ unnecessary\ items}}
+\DoxyCodeLine{\ \ \ \ scene-\/>removeItem(hud);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{delete}\ hud;}
+\DoxyCodeLine{\ \ \ \ scene-\/>removeItem(gameOverLabel);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{delete}\ gameOverLabel;}
+\DoxyCodeLine{\ \ \ \ scene-\/>removeItem(playAgainWidget);}
+\DoxyCodeLine{\ \ \ \ QList<QGraphicsItem*>\ sceneItems\ =\ items();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (sceneItems.contains(highScoreLabel))\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ scene-\/>removeItem(highScoreLabel);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ highScoreLabel;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{/*for\ (auto\ item:sceneItems)\{}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ \ \ Obstacle*\ obst\ =\ dynamic\_cast<Obstacle*>(item);}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ \ \ if\ (obst)\{}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ delete\ obst;}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \}*/}\ \ \ \ \ \textcolor{comment}{//\ method\ replaced\ with\ std::for\_each()\ :}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ std::for\_each(sceneItems.begin(),\ sceneItems.end(),\ [](QGraphicsItem*\ item)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Obstacle*\ obst\ =\ dynamic\_cast<Obstacle*>(item);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ if\ (obst)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ delete\ obst;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{delete}\ music;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{delete}\ audioOutput;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ restarting\ game}}
+\DoxyCodeLine{\ \ \ \ playMusic();}
+\DoxyCodeLine{\ \ \ \ setUpObstacleTimer();}
+\DoxyCodeLine{\ \ \ \ collisionT-\/>start();}
+\DoxyCodeLine{\ \ \ \ player-\/>unfreeze();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ player-\/>setFocus();}
+\DoxyCodeLine{\ \ \ \ hud\ =\ \textcolor{keyword}{new}\ HUD();}
+\DoxyCodeLine{\ \ \ \ scene-\/>addItem(hud);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

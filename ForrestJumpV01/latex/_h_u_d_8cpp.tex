@@ -1,0 +1,54 @@
+\doxysection{HUD.\+cpp File Reference}
+\label{_h_u_d_8cpp}\index{HUD.cpp@{HUD.cpp}}
+{\ttfamily \#include \char`\"{}HUD.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$QFont$>$}\newline
+{\ttfamily \#include $<$QDebug$>$}\newline
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Amarildo Rajta 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2023-\/01-\/07
+\end{DoxyDate}
+DT079G Project -\/ Forrest Jump game
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ HUD.cpp}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{HUD::HUD(QGraphicsItem\ *parent):\ QGraphicsTextItem(parent),\ score(0)\{}
+\DoxyCodeLine{\ \ \ \ setDefaultTextColor(Qt::white);}
+\DoxyCodeLine{\ \ \ \ setFont(QFont(\textcolor{stringliteral}{"{}times"{}},16));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ HUDTimer\ =\ \textcolor{keyword}{new}\ QTimer(\textcolor{keyword}{this});}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//connecting\ the\ scoreIncrement()\ to\ a\ timer\ with\ 1Hz\ (1/second)\ frequency}}
+\DoxyCodeLine{\ \ \ \ connect(HUDTimer,\&QTimer::timeout,[=]()\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ scoreIncrement();}
+\DoxyCodeLine{\ \ \ \ \});}
+\DoxyCodeLine{\ \ \ \ HUDTimer-\/>start(1000);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ HUD::scoreIncrement()\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ setPlainText(QString(\textcolor{stringliteral}{"{}Score:\ "{}})+QString::number(score));}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ score++;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ HUD::getScore()\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (score==0)\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ score;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ score-\/1;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ HUD::stopTimer()\{}
+\DoxyCodeLine{\ \ \ \ HUDTimer-\/>stop();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

@@ -1,0 +1,115 @@
+\doxysection{Player.\+cpp File Reference}
+\label{_player_8cpp}\index{Player.cpp@{Player.cpp}}
+{\ttfamily \#include \char`\"{}Player.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$QGraphics\+Scene$>$}\newline
+{\ttfamily \#include $<$QKey\+Event$>$}\newline
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Amarildo Rajta 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2023-\/01-\/07
+\end{DoxyDate}
+DT079G Project -\/ Forrest Jump game
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ Player.cpp}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{Player::Player(QGraphicsItem\ *parent):\ QGraphicsPixmapItem(parent)\{}
+\DoxyCodeLine{\ \ \ \ isJumping\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ setting\ up\ graphic}}
+\DoxyCodeLine{\ \ \ \ setPixmap(QPixmap(\textcolor{stringliteral}{"{}:/images/resources/player\_luffy.png"{}}));}
+\DoxyCodeLine{\ \ \ \ this-\/>setPos(5,500);}
+\DoxyCodeLine{\ \ \ \ this-\/>setFlag(QGraphicsItem::ItemIsFocusable);}
+\DoxyCodeLine{\ \ \ \ this-\/>setFocus();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ setting\ up\ the\ jumping\ sound\ effect}}
+\DoxyCodeLine{\ \ \ \ jumpSFX\ =\ \textcolor{keyword}{new}\ QMediaPlayer();}
+\DoxyCodeLine{\ \ \ \ audioOutputJ\ =\ \textcolor{keyword}{new}\ QAudioOutput();}
+\DoxyCodeLine{\ \ \ \ jumpSFX-\/>setAudioOutput(audioOutputJ);}
+\DoxyCodeLine{\ \ \ \ audioOutputJ-\/>setVolume(0.5);}
+\DoxyCodeLine{\ \ \ \ jumpSFX-\/>setSource(QUrl(\textcolor{stringliteral}{"{}qrc:/audio/resources/jump\_dbz.mp3"{}}));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ setting\ up\ the\ jump\ animation}}
+\DoxyCodeLine{\ \ \ \ jumpAnimation\ =\ \textcolor{keyword}{new}\ QPropertyAnimation(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}y"{}},\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\ \ \ \ jumpAnimation-\/>setDuration(300);}
+\DoxyCodeLine{\ \ \ \ jumpAnimation-\/>setEasingCurve(QEasingCurve::InQuad);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ Player::keyPressEvent(QKeyEvent\ *event)\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (event-\/>key()\ ==\ Qt::Key\_Up\ ||\ event-\/>key()\ ==\ Qt::Key\_Space)\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (jumpsAllowed)\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ jump();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ playing\ jumping\ sound\ effect,\ configuring\ playback\ scenarios}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (jumpSFX-\/>playbackState()\ \ ==\ QMediaPlayer::PlayingState)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ jumpSFX-\/>setPosition(0);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (jumpSFX-\/>playbackState()\ ==\ QMediaPlayer::StoppedState)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ jumpSFX-\/>play();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ Player::jump()\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Preventing\ double\ jumping\ and\ delaying\ of\ the\ fall}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (isJumping)\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ isJumping\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \ \ jumpAnimation-\/>setStartValue(y());}
+\DoxyCodeLine{\ \ \ \ jumpAnimation-\/>setEndValue(y()-\/200);}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Connecting\ the\ animation's\ finished\ signal\ to\ the\ fallDown\ slot}}
+\DoxyCodeLine{\ \ \ \ connect(jumpAnimation,\ \&QPropertyAnimation::finished,\ \textcolor{keyword}{this},\ \&Player::fallDown);}
+\DoxyCodeLine{\ \ \ \ jumpAnimation-\/>start();}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ Player::freezeInPlace()\{}
+\DoxyCodeLine{\ \ \ \ jumpAnimation-\/>stop();}
+\DoxyCodeLine{\ \ \ \ jumpsAllowed\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ Player::unfreeze()\{}
+\DoxyCodeLine{\ \ \ \ jumpAnimation-\/>start();}
+\DoxyCodeLine{\ \ \ \ jumpsAllowed\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ Player::setY(qreal\ y)\{}
+\DoxyCodeLine{\ \ \ \ setPos(QPointF(pos().x(),\ y));}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{qreal\ Player::y()\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ pos().y();}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ Player::fallDown()\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Disconnecting\ the\ finished\ signal\ to\ prevent\ the\ slot\ from\ being\ called\ multiple\ times}}
+\DoxyCodeLine{\ \ \ \ jumpAnimation-\/>disconnect(\textcolor{keyword}{this});}
+\DoxyCodeLine{\ \ \ \ jumpAnimation-\/>setStartValue(y());}
+\DoxyCodeLine{\ \ \ \ jumpAnimation-\/>setEndValue(y()+200);}
+\DoxyCodeLine{\ \ \ \ connect(jumpAnimation,\ \&QPropertyAnimation::finished,\ \textcolor{keyword}{this},\ \&Player::jumpFinished);}
+\DoxyCodeLine{\ \ \ \ jumpAnimation-\/>start();}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ Player::jumpFinished()\{}
+\DoxyCodeLine{\ \ \ \ isJumping\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\ \ \ \ jumpAnimation-\/>disconnect(\textcolor{keyword}{this});}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ Player::updateCollisionCont()\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//storing\ player\ collision\ information}}
+\DoxyCodeLine{\ \ \ \ collidingItemsContainer\ =\ collidingItems();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

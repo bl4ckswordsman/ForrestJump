@@ -1,5 +1,7 @@
-/* DT079G Project - Forrest Jump game
- *  Amarildo Rajta 2023-01-07 */
+/*! \author Amarildo Rajta \date 2023-01-07
+ *  \details DT079G Project - Forrest Jump game */
+//! \file
+//! \headerfile Game.h
 #ifndef GAME_H
 #define GAME_H
 
@@ -17,7 +19,7 @@
  * \brief The Game class
  * The game class initiates objects from the Player, Obstacle, HUD class, assisted by animation and
  * collision detection methods as well as other image and audio components to run the Forrest Jump
- * game.
+ * game. Implemented in Game.cpp
  */
 class Game : public QGraphicsView{
 Q_OBJECT

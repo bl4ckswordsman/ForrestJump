@@ -74,57 +74,58 @@ $(function() {
   <div class="headertitle"><div class="title">Player.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* DT079G Project - Forrest Jump game</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> *  Amarildo Rajta 2023-01-07 */</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef PLAYER_H</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define PLAYER_H</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QGraphicsPixmapItem&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QProperty&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QPropertyAnimation&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QMediaPlayer&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QAudioOutput&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_player.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="class_player.html">Player</a> : <span class="keyword">public</span> QObject, <span class="keyword">public</span> QGraphicsPixmapItem{</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    Q_OBJECT</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    Q_PROPERTY(qreal y READ y WRITE <a class="code hl_function" href="class_player.html#a00ce69853f1a5315ff812dd268a9c290">setY</a>)</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_class" href="class_player.html">Player</a>(QGraphicsItem *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_player.html#aa0c750a1ce1c98bbb516a43499806a99">freezeInPlace</a>();</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_player.html#a208f393d457b0520ee90b976256f734a">unfreeze</a>();</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_player.html#a00ce69853f1a5315ff812dd268a9c290">setY</a>(qreal Y);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    qreal y() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_player.html#ab8f8693f5785e404ebff4012f4d1d5cd">   50</a></span>    QList&lt;QGraphicsItem*&gt; <a class="code hl_variable" href="class_player.html#ab8f8693f5785e404ebff4012f4d1d5cd">collidingItemsContainer</a>;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_player.html#a93ff7433b79d97802bd0035781157c51">   54</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_player.html#a93ff7433b79d97802bd0035781157c51">jumpsAllowed</a>;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">public</span> slots:</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_player.html#af6e9bbe8d75dfab2cb7ce2f4efc59789">updateCollisionCont</a>();</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">void</span> keyPressEvent(QKeyEvent *event);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">void</span> jump();</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    QPropertyAnimation* jumpAnimation;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordtype">bool</span> isJumping;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    QMediaPlayer* jumpSFX;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    QAudioOutput* audioOutputJ;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keyword">private</span> slots:</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordtype">void</span> fallDown();</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordtype">void</span> jumpFinished();</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>};</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">#endif </span><span class="comment">// PLAYER_H</span></div>
-<div class="ttc" id="aclass_player_html"><div class="ttname"><a href="class_player.html">Player</a></div><div class="ttdoc">The Player class.</div><div class="ttdef"><b>Definition:</b> Player.h:16</div></div>
-<div class="ttc" id="aclass_player_html_a00ce69853f1a5315ff812dd268a9c290"><div class="ttname"><a href="class_player.html#a00ce69853f1a5315ff812dd268a9c290">Player::setY</a></div><div class="ttdeci">void setY(qreal Y)</div><div class="ttdoc">Sets the y coordinate of the object.</div><div class="ttdef"><b>Definition:</b> Player.cpp:70</div></div>
-<div class="ttc" id="aclass_player_html_a208f393d457b0520ee90b976256f734a"><div class="ttname"><a href="class_player.html#a208f393d457b0520ee90b976256f734a">Player::unfreeze</a></div><div class="ttdeci">void unfreeze()</div><div class="ttdoc">Starts the vertical animation and sets jumpAllowed to true.</div><div class="ttdef"><b>Definition:</b> Player.cpp:65</div></div>
-<div class="ttc" id="aclass_player_html_a93ff7433b79d97802bd0035781157c51"><div class="ttname"><a href="class_player.html#a93ff7433b79d97802bd0035781157c51">Player::jumpsAllowed</a></div><div class="ttdeci">bool jumpsAllowed</div><div class="ttdoc">Stores if jumps are allowed, i.e. when the game is running.</div><div class="ttdef"><b>Definition:</b> Player.h:54</div></div>
-<div class="ttc" id="aclass_player_html_aa0c750a1ce1c98bbb516a43499806a99"><div class="ttname"><a href="class_player.html#aa0c750a1ce1c98bbb516a43499806a99">Player::freezeInPlace</a></div><div class="ttdeci">void freezeInPlace()</div><div class="ttdoc">Stops the vertical animation and sets jumpAllowed to false.</div><div class="ttdef"><b>Definition:</b> Player.cpp:60</div></div>
-<div class="ttc" id="aclass_player_html_ab8f8693f5785e404ebff4012f4d1d5cd"><div class="ttname"><a href="class_player.html#ab8f8693f5785e404ebff4012f4d1d5cd">Player::collidingItemsContainer</a></div><div class="ttdeci">QList&lt; QGraphicsItem * &gt; collidingItemsContainer</div><div class="ttdoc">Stores all the items that Player has collided with.</div><div class="ttdef"><b>Definition:</b> Player.h:50</div></div>
-<div class="ttc" id="aclass_player_html_af6e9bbe8d75dfab2cb7ce2f4efc59789"><div class="ttname"><a href="class_player.html#af6e9bbe8d75dfab2cb7ce2f4efc59789">Player::updateCollisionCont</a></div><div class="ttdeci">void updateCollisionCont()</div><div class="ttdoc">Updates the collidingItemsContainer with a current list of colliding items.</div><div class="ttdef"><b>Definition:</b> Player.cpp:92</div></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifndef PLAYER_H</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#define PLAYER_H</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QGraphicsPixmapItem&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QProperty&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QPropertyAnimation&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QMediaPlayer&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QAudioOutput&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_player.html">   17</a></span><span class="keyword">class </span><a class="code hl_class" href="class_player.html">Player</a> : <span class="keyword">public</span> QObject, <span class="keyword">public</span> QGraphicsPixmapItem{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    Q_OBJECT</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    Q_PROPERTY(qreal y READ y WRITE <a class="code hl_function" href="class_player.html#a00ce69853f1a5315ff812dd268a9c290">setY</a>)</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_player.html#a847cda8deb8dca3637bef1084643b46b">   25</a></span>    <a class="code hl_function" href="class_player.html#a847cda8deb8dca3637bef1084643b46b">Player</a>(QGraphicsItem *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_player.html#aa0c750a1ce1c98bbb516a43499806a99">   30</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_player.html#aa0c750a1ce1c98bbb516a43499806a99">freezeInPlace</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_player.html#a208f393d457b0520ee90b976256f734a">   34</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_player.html#a208f393d457b0520ee90b976256f734a">unfreeze</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_player.html#a00ce69853f1a5315ff812dd268a9c290">   40</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_player.html#a00ce69853f1a5315ff812dd268a9c290">setY</a>(qreal Y);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_player.html#a5ca0ef0346208102566f82588f23381d">   46</a></span>    qreal <a class="code hl_function" href="class_player.html#a5ca0ef0346208102566f82588f23381d">y</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_player.html#ab8f8693f5785e404ebff4012f4d1d5cd">   51</a></span>    QList&lt;QGraphicsItem*&gt; <a class="code hl_variable" href="class_player.html#ab8f8693f5785e404ebff4012f4d1d5cd">collidingItemsContainer</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_player.html#a93ff7433b79d97802bd0035781157c51">   55</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_player.html#a93ff7433b79d97802bd0035781157c51">jumpsAllowed</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">public</span> slots:</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_player.html#af6e9bbe8d75dfab2cb7ce2f4efc59789">   60</a></span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_player.html#af6e9bbe8d75dfab2cb7ce2f4efc59789">updateCollisionCont</a>();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">void</span> keyPressEvent(QKeyEvent *event);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordtype">void</span> jump();</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    QPropertyAnimation* jumpAnimation;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordtype">bool</span> isJumping;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    QMediaPlayer* jumpSFX;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    QAudioOutput* audioOutputJ;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordtype">void</span> fallDown();</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordtype">void</span> jumpFinished();</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>};</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="preprocessor">#endif </span><span class="comment">// PLAYER_H</span></div>
+<div class="ttc" id="aclass_player_html"><div class="ttname"><a href="class_player.html">Player</a></div><div class="ttdoc">The Player class.</div><div class="ttdef"><b>Definition:</b> Player.h:17</div></div>
+<div class="ttc" id="aclass_player_html_a00ce69853f1a5315ff812dd268a9c290"><div class="ttname"><a href="class_player.html#a00ce69853f1a5315ff812dd268a9c290">Player::setY</a></div><div class="ttdeci">void setY(qreal Y)</div><div class="ttdoc">Sets the y coordinate of the object.</div></div>
+<div class="ttc" id="aclass_player_html_a208f393d457b0520ee90b976256f734a"><div class="ttname"><a href="class_player.html#a208f393d457b0520ee90b976256f734a">Player::unfreeze</a></div><div class="ttdeci">void unfreeze()</div><div class="ttdoc">Starts the vertical animation and sets jumpAllowed to true.</div></div>
+<div class="ttc" id="aclass_player_html_a5ca0ef0346208102566f82588f23381d"><div class="ttname"><a href="class_player.html#a5ca0ef0346208102566f82588f23381d">Player::y</a></div><div class="ttdeci">qreal y() const</div><div class="ttdoc">Finds out at what y coordinate the object is at.</div></div>
+<div class="ttc" id="aclass_player_html_a847cda8deb8dca3637bef1084643b46b"><div class="ttname"><a href="class_player.html#a847cda8deb8dca3637bef1084643b46b">Player::Player</a></div><div class="ttdeci">Player(QGraphicsItem *parent=nullptr)</div><div class="ttdoc">The Player class constructor.</div></div>
+<div class="ttc" id="aclass_player_html_a93ff7433b79d97802bd0035781157c51"><div class="ttname"><a href="class_player.html#a93ff7433b79d97802bd0035781157c51">Player::jumpsAllowed</a></div><div class="ttdeci">bool jumpsAllowed</div><div class="ttdoc">Stores if jumps are allowed, i.e. when the game is running.</div><div class="ttdef"><b>Definition:</b> Player.h:55</div></div>
+<div class="ttc" id="aclass_player_html_aa0c750a1ce1c98bbb516a43499806a99"><div class="ttname"><a href="class_player.html#aa0c750a1ce1c98bbb516a43499806a99">Player::freezeInPlace</a></div><div class="ttdeci">void freezeInPlace()</div><div class="ttdoc">Stops the vertical animation and sets jumpAllowed to false.</div></div>
+<div class="ttc" id="aclass_player_html_ab8f8693f5785e404ebff4012f4d1d5cd"><div class="ttname"><a href="class_player.html#ab8f8693f5785e404ebff4012f4d1d5cd">Player::collidingItemsContainer</a></div><div class="ttdeci">QList&lt; QGraphicsItem * &gt; collidingItemsContainer</div><div class="ttdoc">Stores all the items that Player has collided with.</div><div class="ttdef"><b>Definition:</b> Player.h:51</div></div>
+<div class="ttc" id="aclass_player_html_af6e9bbe8d75dfab2cb7ce2f4efc59789"><div class="ttname"><a href="class_player.html#af6e9bbe8d75dfab2cb7ce2f4efc59789">Player::updateCollisionCont</a></div><div class="ttdeci">void updateCollisionCont()</div><div class="ttdoc">Updates the collidingItemsContainer with a current list of colliding items.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

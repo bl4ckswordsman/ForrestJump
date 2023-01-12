@@ -1,16 +1,26 @@
-/* DT079G Project - Forrest Jump game
- *  Amarildo Rajta 2023-01-07 */
+/*! \author Amarildo Rajta \date 2023-01-07
+ *  \details DT079G Project - Forrest Jump game */
+//! \file
+//! \code Obstacle.cpp
+
 #include "Obstacle.h"
 #include <QRandomGenerator>
 #include <QDebug>
 #include <QTimer>
+#include <random>
 
 
 Obstacle::Obstacle(QGraphicsItem* parent):
     QGraphicsPixmapItem(parent){
     // setting up the pixmap
     setPixmap(QPixmap(":/images/resources/obstacle_tree.png"));
-    int xRandomizer = QRandomGenerator::global()->bounded(200);
+    //int xRandomizer = QRandomGenerator::global()->bounded(200);
+
+    // variant to QRandomGenerator::global() by std::uniform_int_distribution<> from the "random" STL :
+    std::uniform_int_distribution<> dist(0,200);
+    std::mt19937 rndNGen;
+    int xRandomizer = dist(rndNGen);
+
     setPos(QPoint(0,0)+QPoint(660 + xRandomizer,500));
     // setting up the animation
     xAnimation = new QPropertyAnimation(this, "x", this);
@@ -44,4 +54,4 @@ void Obstacle::setX(qreal x){
     //qDebug() << this->x();
 }
 
-
+//! \endcode
