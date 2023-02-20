@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-281cedef47272e5452f3.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ForrestJumpV02",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ForrestJumpV02::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ForrestJumpV02-Release-85805fb1cf6f83c97be1.json",
+					"name" : "ForrestJumpV02",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ForrestJumpV02_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ForrestJumpV02_autogen-Release-bd5fd418144d30ba0fea.json",
+					"name" : "ForrestJumpV02_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ForrestJumpV02_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ForrestJumpV02_autogen_timestamp_deps-Release-30443421799801925a61.json",
+					"name" : "ForrestJumpV02_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-WebAssembly_Qt_6_4_1-Release",
+		"source" : "C:/Users/amari/Desktop/ForrestJumpV0.2/ForrestJumpV01"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

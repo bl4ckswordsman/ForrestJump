@@ -1,0 +1,62 @@
+The target system is: Emscripten - 1 - x86
+The host system is: Windows - 10.0.22621 - AMD64
+Performing C++ SOURCE FILE Test HAVE_STDATOMIC succeeded with the following output:
+Change Dir: C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-WebAssembly_Qt_6_4_1-MinSizeRel/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Qt/Tools/Ninja/ninja.exe cmTC_34b8a && [1/2] Building CXX object CMakeFiles/cmTC_34b8a.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_34b8a.js
+
+
+Source file was:
+#include <atomic>
+#include <cstdint>
+
+int main(int, char **)
+{
+    volatile std::atomic<char>    size_1;
+    volatile std::atomic<short>   size_2;
+    volatile std::atomic<int>     size_4;
+    volatile std::atomic<int64_t> size_8;
+
+    ++size_1;
+    ++size_2;
+    ++size_4;
+    ++size_8;
+
+    (void)size_1.load(std::memory_order_relaxed);
+    (void)size_2.load(std::memory_order_relaxed);
+    (void)size_4.load(std::memory_order_relaxed);
+    (void)size_8.load(std::memory_order_relaxed);
+
+    return 0;
+}
+Performing C++ SOURCE FILE Test HAVE_GETTIME succeeded with the following output:
+Change Dir: C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-WebAssembly_Qt_6_4_1-MinSizeRel/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Qt/Tools/Ninja/ninja.exe cmTC_94955 && [1/2] Building CXX object CMakeFiles/cmTC_94955.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_94955.js
+
+
+Source file was:
+
+#include <unistd.h>
+#include <time.h>
+
+int main(int, char **) {
+    timespec ts; clock_gettime(CLOCK_REALTIME, &ts);
+}
+Performing C++ SOURCE FILE Test HAVE_EGL succeeded with the following output:
+Change Dir: C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-WebAssembly_Qt_6_4_1-MinSizeRel/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Qt/Tools/Ninja/ninja.exe cmTC_c56bc && [1/2] Building CXX object CMakeFiles/cmTC_c56bc.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_c56bc.js
+
+
+Source file was:
+
+#include <EGL/egl.h>
+
+int main(int, char **) {
+    EGLint x = 0; EGLDisplay dpy = 0; EGLContext ctx = 0;
+    eglDestroyContext(dpy, ctx);
+}

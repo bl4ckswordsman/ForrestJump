@@ -1,0 +1,80 @@
+The target system is: Emscripten - 1 - x86
+The host system is: Windows - 10.0.22621 - AMD64
+Performing C++ SOURCE FILE Test HAVE_STDATOMIC succeeded with the following output:
+Change Dir: C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-WebAssembly_Qt_6_4_1-RelWithDebInfo/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Qt/Tools/mingw1120_64/bin/mingw32-make.exe -f Makefile cmTC_65952/fast && C:/Qt/Tools/mingw1120_64/bin/mingw32-make.exe  -f CMakeFiles\cmTC_65952.dir\build.make CMakeFiles/cmTC_65952.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-WebAssembly_Qt_6_4_1-RelWithDebInfo/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_65952.dir/src.cxx.o
+C:\Users\amari\emsdk\upstream\emscripten\em++.bat -DHAVE_STDATOMIC  -std=gnu++17 -MD -MT CMakeFiles/cmTC_65952.dir/src.cxx.o -MF CMakeFiles\cmTC_65952.dir\src.cxx.o.d -o CMakeFiles\cmTC_65952.dir\src.cxx.o -c "C:\Users\amari\OneDrive - Mittuniversitetet\2022-2023\2022-11\DT079G\Project\ForrestJumpV0.1\build-ForrestJumpV01-WebAssembly_Qt_6_4_1-RelWithDebInfo\CMakeFiles\CMakeTmp\src.cxx"
+Linking CXX executable cmTC_65952.js
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_65952.dir\link.txt --verbose=1
+C:\Users\amari\emsdk\upstream\emscripten\em++.bat @CMakeFiles\cmTC_65952.dir\objects1.rsp -o cmTC_65952.js 
+mingw32-make.exe[1]: Leaving directory 'C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-WebAssembly_Qt_6_4_1-RelWithDebInfo/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <atomic>
+#include <cstdint>
+
+int main(int, char **)
+{
+    volatile std::atomic<char>    size_1;
+    volatile std::atomic<short>   size_2;
+    volatile std::atomic<int>     size_4;
+    volatile std::atomic<int64_t> size_8;
+
+    ++size_1;
+    ++size_2;
+    ++size_4;
+    ++size_8;
+
+    (void)size_1.load(std::memory_order_relaxed);
+    (void)size_2.load(std::memory_order_relaxed);
+    (void)size_4.load(std::memory_order_relaxed);
+    (void)size_8.load(std::memory_order_relaxed);
+
+    return 0;
+}
+Performing C++ SOURCE FILE Test HAVE_GETTIME succeeded with the following output:
+Change Dir: C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-WebAssembly_Qt_6_4_1-RelWithDebInfo/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Qt/Tools/mingw1120_64/bin/mingw32-make.exe -f Makefile cmTC_19983/fast && C:/Qt/Tools/mingw1120_64/bin/mingw32-make.exe  -f CMakeFiles\cmTC_19983.dir\build.make CMakeFiles/cmTC_19983.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-WebAssembly_Qt_6_4_1-RelWithDebInfo/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_19983.dir/src.cxx.o
+C:\Users\amari\emsdk\upstream\emscripten\em++.bat -DHAVE_GETTIME  -std=gnu++17 -MD -MT CMakeFiles/cmTC_19983.dir/src.cxx.o -MF CMakeFiles\cmTC_19983.dir\src.cxx.o.d -o CMakeFiles\cmTC_19983.dir\src.cxx.o -c "C:\Users\amari\OneDrive - Mittuniversitetet\2022-2023\2022-11\DT079G\Project\ForrestJumpV0.1\build-ForrestJumpV01-WebAssembly_Qt_6_4_1-RelWithDebInfo\CMakeFiles\CMakeTmp\src.cxx"
+Linking CXX executable cmTC_19983.js
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_19983.dir\link.txt --verbose=1
+C:\Users\amari\emsdk\upstream\emscripten\em++.bat @CMakeFiles\cmTC_19983.dir\objects1.rsp -o cmTC_19983.js 
+mingw32-make.exe[1]: Leaving directory 'C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-WebAssembly_Qt_6_4_1-RelWithDebInfo/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+#include <unistd.h>
+#include <time.h>
+
+int main(int, char **) {
+    timespec ts; clock_gettime(CLOCK_REALTIME, &ts);
+}
+Performing C++ SOURCE FILE Test HAVE_EGL succeeded with the following output:
+Change Dir: C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-WebAssembly_Qt_6_4_1-RelWithDebInfo/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Qt/Tools/mingw1120_64/bin/mingw32-make.exe -f Makefile cmTC_b8e00/fast && C:/Qt/Tools/mingw1120_64/bin/mingw32-make.exe  -f CMakeFiles\cmTC_b8e00.dir\build.make CMakeFiles/cmTC_b8e00.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-WebAssembly_Qt_6_4_1-RelWithDebInfo/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_b8e00.dir/src.cxx.o
+C:\Users\amari\emsdk\upstream\emscripten\em++.bat -DHAVE_EGL  -std=gnu++17 -MD -MT CMakeFiles/cmTC_b8e00.dir/src.cxx.o -MF CMakeFiles\cmTC_b8e00.dir\src.cxx.o.d -o CMakeFiles\cmTC_b8e00.dir\src.cxx.o -c "C:\Users\amari\OneDrive - Mittuniversitetet\2022-2023\2022-11\DT079G\Project\ForrestJumpV0.1\build-ForrestJumpV01-WebAssembly_Qt_6_4_1-RelWithDebInfo\CMakeFiles\CMakeTmp\src.cxx"
+Linking CXX executable cmTC_b8e00.js
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_b8e00.dir\link.txt --verbose=1
+C:\Users\amari\emsdk\upstream\emscripten\em++.bat @CMakeFiles\cmTC_b8e00.dir\objects1.rsp -o cmTC_b8e00.js 
+mingw32-make.exe[1]: Leaving directory 'C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-WebAssembly_Qt_6_4_1-RelWithDebInfo/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+#include <EGL/egl.h>
+
+int main(int, char **) {
+    EGLint x = 0; EGLDisplay dpy = 0; EGLContext ctx = 0;
+    eglDestroyContext(dpy, ctx);
+}

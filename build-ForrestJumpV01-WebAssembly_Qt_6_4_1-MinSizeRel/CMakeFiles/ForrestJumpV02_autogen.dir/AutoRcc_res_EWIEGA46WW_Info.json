@@ -1,0 +1,29 @@
+{
+	"BUILD_DIR" : "C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-WebAssembly_Qt_6_4_1-MinSizeRel/ForrestJumpV02_autogen",
+	"CMAKE_BINARY_DIR" : "C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-WebAssembly_Qt_6_4_1-MinSizeRel",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-WebAssembly_Qt_6_4_1-MinSizeRel",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/amari/Desktop/ForrestJumpV0.2/ForrestJumpV01",
+	"CMAKE_SOURCE_DIR" : "C:/Users/amari/Desktop/ForrestJumpV0.2/ForrestJumpV01",
+	"INCLUDE_DIR" : "C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-WebAssembly_Qt_6_4_1-MinSizeRel/ForrestJumpV02_autogen/include",
+	"INPUTS" : 
+	[
+		"C:/Users/amari/Desktop/ForrestJumpV0.2/ForrestJumpV01/resources/obstacle_tree.png",
+		"C:/Users/amari/Desktop/ForrestJumpV0.2/ForrestJumpV01/resources/player_luffy.png",
+		"C:/Users/amari/Desktop/ForrestJumpV0.2/ForrestJumpV01/resources/forrestjump.png",
+		"C:/Users/amari/Desktop/ForrestJumpV0.2/ForrestJumpV01/resources/bg.png",
+		"C:/Users/amari/Desktop/ForrestJumpV0.2/ForrestJumpV01/resources/scores.txt",
+		"C:/Users/amari/Desktop/ForrestJumpV0.2/ForrestJumpV01/resources/jump_dbz.mp3",
+		"C:/Users/amari/Desktop/ForrestJumpV0.2/ForrestJumpV01/resources/gameover.mp3",
+		"C:/Users/amari/Desktop/ForrestJumpV0.2/ForrestJumpV01/resources/theme_OP.mp3"
+	],
+	"LOCK_FILE" : "C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-WebAssembly_Qt_6_4_1-MinSizeRel/CMakeFiles/ForrestJumpV02_autogen.dir/AutoRcc_res_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "res" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_res.cpp",
+	"RCC_EXECUTABLE" : "C:/Qt/6.4.1/mingw_64/./bin/rcc.exe",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "C:/Users/amari/OneDrive - Mittuniversitetet/2022-2023/2022-11/DT079G/Project/ForrestJumpV0.1/build-ForrestJumpV01-WebAssembly_Qt_6_4_1-MinSizeRel/CMakeFiles/ForrestJumpV02_autogen.dir/AutoRcc_res_EWIEGA46WW_Used.txt",
+	"SOURCE" : "C:/Users/amari/Desktop/ForrestJumpV0.2/ForrestJumpV01/res.qrc",
+	"VERBOSITY" : 0
+}
