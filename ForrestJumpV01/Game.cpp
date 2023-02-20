@@ -20,7 +20,7 @@ Game::Game(QWidget *parent): QGraphicsView(parent){
     initiateGameElements();
 }
 
-
+// Function object to freeze all obstacles
 struct FreezeObstacles{
     void operator()(QGraphicsItem* item)
     {
