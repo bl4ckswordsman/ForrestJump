@@ -20,10 +20,9 @@ Game::Game(QWidget *parent): QGraphicsView(parent){
     initiateGameElements();
 }
 
-// Function object to freeze all obstacles
+// Function object (functor) to freeze all obstacles
 struct FreezeObstacles{
-    void operator()(QGraphicsItem* item)
-    {
+    void operator()(QGraphicsItem* item) {
         Obstacle* obst = dynamic_cast<Obstacle*>(item);
         if (obst) {
             obst->freezeInPlace();

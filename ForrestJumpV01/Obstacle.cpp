@@ -21,7 +21,9 @@ Obstacle::Obstacle(QGraphicsItem* parent):
     std::uniform_int_distribution<> dist(0,200);
     std::mt19937 rndNGen(rd());
     int xRandomizer = dist(rndNGen);
-    qDebug()<< "RANDOMIZER::: " << xRandomizer;
+    ///////////////////////////////////////////
+    ///////////// DEBUGING ////////////////////
+    //qDebug()<< "RANDOMIZER::: " << xRandomizer;
 
     setPos(QPoint(0,0)+QPoint(660 + xRandomizer,500));
     // setting up the animation
